@@ -20,7 +20,5 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // 추가적인 클라이언트 사이드 유효성 검사 가능
-        // 예: 비밀번호 길이, 특수문자 포함 등
     });
 });

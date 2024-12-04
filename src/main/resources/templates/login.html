@@ -10,6 +10,7 @@
     <div class="logo">
         <img th:src="@{/images/icon.png}" alt="League of Legends">
     </div>
+
     <form th:action="@{/login}" method="post" id="loginForm">
         <div th:if="${param.error}" class="error-message">
             소환사명 또는 비밀번호가 올바르지 않습니다.
@@ -20,7 +21,6 @@
         <div class="input-group">
             <input type="password" id="password" name="password" placeholder="비밀번호" required>
         </div>
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
         <button type="submit" class="login-btn">로그인</button>
     </form>
     <div class="additional-links">
