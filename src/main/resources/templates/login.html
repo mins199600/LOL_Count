@@ -11,7 +11,7 @@
         <img th:src="@{/images/icon.png}" alt="League of Legends">
     </div>
 
-    <form th:action="@{/login}" method="post" id="loginForm">
+    <form th:action="@{/main}" method="post" id="loginForm">
         <div th:if="${param.error}" class="error-message">
             소환사명 또는 비밀번호가 올바르지 않습니다.
         </div>

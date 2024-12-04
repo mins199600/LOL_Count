@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #0A1428;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #F0E6D2;
+}
+
+.signup-container {
+    background-color: rgba(5, 10, 20, 0.8);
+    border: 2px solid #C8AA6E;
+    width: 400px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(200, 170, 110, 0.3);
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background-color: #0A1428;
+    border: 1px solid #C8AA6E;
+    color: #F0E6D2;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+    color: #C8AA6E;
+    opacity: 0.7;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #C8AA6E;
+    color: #0A1428;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.signup-btn:hover {
+    background-color: #E8D8B3;
+}
+
+.additional-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.additional-links a {
+    color: #C8AA6E;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.additional-links a:hover {
+    color: #E8D8B3;
+}
+
+.error-message {
+    color: #FF4655;  /* 롤의 에러 메시지 색상 */
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #FF4655;
+    border-radius: 5px;
+    background-color: rgba(255, 70, 85, 0.1);
+}
+
+/* 입력 필드 포커스 효과 */
+.input-group input:focus {
+    outline: none;
+    border-color: #E8D8B3;
+    box-shadow: 0 0 5px rgba(200, 170, 110, 0.5);
+}
