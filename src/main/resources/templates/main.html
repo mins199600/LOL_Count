@@ -2,9 +2,60 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TFT 가이드</title>
+    <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body>
-하잉하잉
+<header class="header">
+    <nav class="nav-container">
+        <div class="logo">TFT 가이드</div>
+            <ul class="nav-menu">
+                <li><a href="items/items">아이템</a></li>
+            </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="champions" class="section">
+        <h2>챔피언 목록</h2>
+        <div class="champion-grid">
+            <div th:each="champion : ${champions}" class="champion-card">
+                <img th:src="${champion.imageUrl}" th:alt="${champion.name}">
+                <h3 th:text="${champion.name}">챔피언 이름</h3>
+                <div class="champion-info">
+                    <span th:text="${champion.cost + '코스트'}" class="cost"></span>
+                    <span th:text="${champion.traits}" class="traits"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="decks" class="section">
+        <h2>추천 덱</h2>
+        <div class="deck-container">
+            <div th:each="deck : ${decks}" class="deck-card">
+                <h3 th:text="${deck.name}">덱 이름</h3>
+                <div class="deck-traits">
+                          <span th:each="trait : ${deck.traits}"
+                                th:text="${trait}"
+                                class="trait-tag">특성</span>
+                </div>
+                <div class="deck-champions">
+                    <div th:each="champion : ${deck.champions}" class="deck-champion">
+                        <img th:src="${champion.imageUrl}" th:alt="${champion.name}">
+                        <span th:text="${champion.name}">챔피언</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2024 TFT 가이드. All rights reserved.</p>
+</footer>
+<script th:src="@{/js/main.js}"></script>
 </body>
 </html>
+`
