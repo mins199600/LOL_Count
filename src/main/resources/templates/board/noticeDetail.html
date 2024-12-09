@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 상세보기</title>
+    <link rel="stylesheet" th:href="@{/css/notice.css}">
+</head>
+<body>
+    <header class="header">
+        <nav class="notice-head">
+            <div class="logo">공지사항 상세보기</div>
+        </nav>
+    </header>
+    <main>
+        <!-- 공지사항 상세 정보 -->
+        <h1>공지사항 상세보기</h1>
+        <table border="1">
+            <tr>
+                <th>번호</th>
+                <td th:text="${notice.id}">1</td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td th:text="${notice.title}">공지사항 제목</td>
+            </tr>
+            <tr>
+                <th>작성자</th>
+                <td th:text="${notice.author}">작성자</td>
+            </tr>
+            <tr>
+                <th>내용</th>
+                <td th:text="${notice.contents}">공지사항 내용</td>
+            </tr>
+            <tr>
+                <th>조회수</th>
+                <td th:text="${notice.views}">조회수</td>
+            </tr>
+            <tr>
+                <th>작성일자</th>
+                <td th:text="${notice.createDate}">2024-12-05</td>
+            </tr>
+            <tr>
+                <th>수정일자</th>
+                <td th:text="${notice.modifiedDate}">2024-12-06</td>
+            </tr>
+        </table>
+
+        <!-- 뒤로가기 버튼 -->
+        <button type="button" onclick="history.back()">뒤로가기</button>
+        <img src="../../../../../../../../AppData/Local/Temp/화면 캡처 2024-12-09 165427.jpg"/>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>
+    </footer>
+    <script th:src="@{/js/notice.js}"></script>
+</body>
+</html>

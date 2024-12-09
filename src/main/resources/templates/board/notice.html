@@ -24,9 +24,9 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="prod : ${noticeList}">
+        <tr th:each="prod : ${noticeList}" th:onclick="|location.href='/noticeDetail?id=${prod.id}'|">
             <td th:text="${prod.id}">1</td>
-            <td th:text="${prod.title}">공지사항 제목</td>
+            <td th:text="${prod.title}">제목</td>
             <td th:text="${prod.author}">작성자</td>
             <td th:text="${prod.views}">조회수</td>
             <td th:text="${prod.create_date}">등록일</td>
