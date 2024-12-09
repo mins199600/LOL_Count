@@ -2,17 +2,17 @@ package hello.lol.member.service;
 
 import hello.lol.member.dao.MemberDao;
 import hello.lol.member.vo.MemberVo;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class MemberService {
 
-    @Autowired
-    private MemberDao memberDao;
+    private final MemberDao memberDao;
 
     @Transactional
     public boolean signup(MemberVo memberVo) throws Exception {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항 게시판</title>
+    <link rel="stylesheet" th:href="@{/css/notice.css}">
+</head>
+<body>
+<header class="header">
+    <nav class="notice-head">
+        <div class="logo">공지사항</div>
+    </nav>
+</header>
+<main>
+    <table>
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>조회수</th>
+            <th>작성일자</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="prod : ${noticeList}">
+            <td th:text="${prod.id}">1</td>
+            <td th:text="${prod.title}">공지사항 제목</td>
+            <td th:text="${prod.author}">작성자</td>
+            <td th:text="${prod.views}">조회수</td>
+            <td th:text="${prod.create_date}">등록일</td>
+        </tr>
+        </tbody>
+        <button type="button" class="noticeWriteButton" id="noticeWriteButton" name="noticeWriteButton">
+            글쓰기</button>
+    </table>
+</main>
+<footer class="footer">
+    <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>
+</footer>
+<script th:src="@{/js/notice.js}"></script>
+</body>
+</html>

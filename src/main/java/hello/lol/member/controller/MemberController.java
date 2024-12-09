@@ -2,6 +2,7 @@ package hello.lol.member.controller;
 
 import hello.lol.member.service.MemberService;
 import hello.lol.member.vo.MemberVo;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -11,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class MemberController {
 
-    @Autowired
-    private MemberService memberService;
+    private final MemberService memberService;
 
     //[로그인으로 돌아가기] 클릭시 돌아가짐
     @GetMapping("/login")
