@@ -16,13 +16,11 @@ public class MemberService {
 
     @Transactional
     public boolean signup(MemberVo memberVo) throws Exception {
-
         // 아이디 중복 체크
-        int memberIdCheck = memberDao.MemberIdCheck(memberVo.getMember_id());
+        int memberIdCheck = memberDao.MemberIdCheck(memberVo.getMemberId());
         if (memberIdCheck > 0) {
             return false; // 중복된 아이디 존재
         }
-
         // 회원가입 처리
         memberDao.insertMember(memberVo);
         return true;

@@ -3,10 +3,8 @@ package hello.lol.member.controller;
 import hello.lol.member.service.MemberService;
 import hello.lol.member.vo.MemberVo;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,10 +31,10 @@ public class MemberController {
     public ResponseEntity<?> insertMember(@ModelAttribute MemberVo memberVo){
         try {
             // 서버 측 유효성 검사
-            if (memberVo.getMember_id() == null || memberVo.getMember_id().trim().isEmpty()) {
+            if (memberVo.getMemberId() == null || memberVo.getMemberId().trim().isEmpty()) {
                 return ResponseEntity.badRequest().body("소환사명을 입력해주세요.");
             }
-            if (memberVo.getMember_pwd() == null || memberVo.getMember_pwd().length() < 8) {
+            if (memberVo.getMemberPwd() == null || memberVo.getMemberPwd().length() < 8) {
                 return ResponseEntity.badRequest().body("비밀번호는 8자 이상이어야 합니다.");
             }
             // 회원가입 처리
