@@ -10,5 +10,5 @@ public class Notice {
     private String contents;
     private int views;
     private String createDate;
-    private String  modifiedDate;
+    private String modifiedDate;
 }

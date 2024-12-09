@@ -10,4 +10,6 @@ public interface NoticeDao {
     List<Notice> NoticeList();
     //단일조회
     Notice findNoticeById(int noticeId);
+    //글쓰기
+    void writeNotice(Notice notice);
 }

@@ -13,5 +13,10 @@
         from notice
         where id = #{noticeId}
     </select>
+    <!--글쓰기-->
+    <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
+        insert into notice(title, author, contents, views)
+        values (#{title}, #{author}, #{contents}, 0);
+    </insert>
 
 </mapper>

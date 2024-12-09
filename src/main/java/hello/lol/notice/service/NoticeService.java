@@ -11,6 +11,7 @@ import java.util.List;
 @Slf4j
 @RequiredArgsConstructor
 public class NoticeService {
+
     private final NoticeDao noticeDao;
 
     //전체조회
@@ -25,5 +26,10 @@ public class NoticeService {
         Notice notice = noticeDao.findNoticeById(noticeId);
         log.info("조회된 공지사항 단일조회 데이터 : {}", notice);
         return notice;
+    }
+    //글쓰기
+    public void writeNotice(Notice notice) {
+        noticeDao.writeNotice(notice);
+        log.info("글쓰기 성공");
     }
 }

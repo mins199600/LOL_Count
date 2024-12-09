@@ -7,6 +7,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class NoticeController {
+
     private final NoticeService noticeService;
 
     //조회
@@ -32,4 +35,18 @@ public class NoticeController {
         model.addAttribute("notice", notice);
         return "/board/noticeDetail";
     }
+
+    //글쓰기
+    @GetMapping("/board/noticeWrite")
+    public String noticeWrite(Model model){
+        model.addAttribute("notice", new Notice());
+        return "/board/noticeWrite";
+    }
+
+    @PostMapping("/notices")
+    public String noticeWrite(@ModelAttribute Notice notice) {
+        noticeService.writeNotice(notice);
+        return "redirect:/board/notice";
+    }
+
 }

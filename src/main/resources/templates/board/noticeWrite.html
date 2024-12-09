@@ -7,30 +7,30 @@
     <link rel="stylesheet" th:href="@{/css/noticeWrite.css}">
 </head>
 <body>
-<header class="header">
-    <nav class="notice-head">
-        <div class="logo">공지사항 글쓰기</div>
-    </nav>
-</header>
-<main class="noticeWriteBody">
-    <form th:action="@{/notices}" method="post">
-        <div>
-            <label for="title">제목:</label>
-            <input type="text" id="title" name="title" required>
-        </div>
-        <div>
-            <label for="author">작성자:</label>
-            <input type="text" id="author" name="author" required>
-        </div>
-        <div>
-            <label for="contents">내용:</label>
-            <textarea id="contents" name="contents" required></textarea>
-        </div>
-        <button type="submit">등록</button>
-    </form>
-</main>
-<footer class="footer">
-    <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>
-</footer>
+    <header class="header">
+        <nav class="notice-head">
+            <div class="logo">공지사항 글쓰기</div>
+        </nav>
+    </header>
+        <main class="noticeWriteBody">
+            <form th:action="@{/notices}" method="post" th:object="${notice}">
+                <div>
+                    <label>제목:</label>
+                    <input type="text" id="title" name="title" th:field="*{title}" required>
+                </div>
+                <div>
+                    <label>작성자:</label>
+                    <input type="text" id="author" name="author" th:field="*{author}" required>
+                </div>
+                <div>
+                    <label>내용:</label>
+                    <textarea id="contents" name="contents" th:field="*{contents}" required></textarea>
+                </div>
+                <button type="submit">등록</button>
+            </form>
+        </main>
+    <footer class="footer">
+        <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>
+    </footer>
 </body>
 </html>
