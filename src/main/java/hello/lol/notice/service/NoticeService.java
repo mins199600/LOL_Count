@@ -43,6 +43,29 @@ public class NoticeService {
         noticeDao.update(notice); // DAO 호출
         log.info("공지사항 수정 완료: {}", notice);
     }
+    //전체 삭제
+    public boolean deleteAllNotices() {
+        int result = noticeDao.deleteAllNotices(); // DAO 호출
+        if (result > 0) {
+            log.info("모든 공지사항 삭제 완료");
+            return true;
+        } else {
+            log.error("모든 공지사항 삭제 실패");
+            return false;
+        }
+    }
+
+    //단일 삭제
+    public boolean deleteNotice(int id) {
+        int result = noticeDao.deleteNotice(id); // DAO 호출
+        if (result > 0) {
+            log.info("공지사항 삭제 완료: ID={}", id);
+            return true;
+        } else {
+            log.error("공지사항 삭제 실패: ID={}", id);
+            return false;
+        }
+    }
 
 }
 

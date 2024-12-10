@@ -16,15 +16,20 @@
     <table>
         <thead>
         <tr>
-            <th>번호</th>
+            <th></th>
+            <th>게시물번호</th>
             <th>제목</th>
             <th>작성자</th>
             <th>조회수</th>
             <th>작성일자</th>
+            <button id="deleteAllButton" type="button">삭제</button>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="prod : ${noticeList}" th:onclick="|location.href='/noticeDetail?id=${prod.id}'|">
+        <tr class="notice-item" th:each="prod : ${noticeList}" th:attr="data-id=${prod.id}">
+            <td>
+                <input type="checkbox" class="notice-checkbox" th:attr="data-id=${prod.id}">
+            </td>
             <td th:text="${prod.id}">1</td>
             <td th:text="${prod.title}">제목</td>
             <td th:text="${prod.author}">작성자</td>

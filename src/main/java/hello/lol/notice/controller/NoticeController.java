@@ -62,6 +62,29 @@ public class NoticeController {
         noticeService.updateNotice(notice);
         return "redirect:/board/notice";
     }
+    // 전체삭제
+    @PostMapping("/deleteAllNotices")
+    public String deleteAllNotices() {
+        boolean isDeleted = noticeService.deleteAllNotices(); // 서비스 호출
+        if (isDeleted) {
+            log.info("모든 공지사항 삭제 성공");
+            return "redirect:/board/notice"; // 성공 시 목록 페이지로 리다이렉트
+        } else {
+            log.error("모든 공지사항 삭제 실패");
+            return "redirect:/board/notice"; // 실패 시에도 목록 페이지로 리다이렉트
+        }
+    }
+    // 단일삭제
+    @PostMapping("/deleteNotice")
+    public String deleteNotice(@RequestParam("id") int id) {
+        boolean deleted = noticeService.deleteNotice(id); // 서비스 호출
+        if (deleted) {
+            log.info("공지사항 삭제 성공: ID={}", id);
+        } else {
+            log.error("공지사항 삭제 실패: ID={}", id);
+        }
+        return "redirect:/board/notice"; // 삭제 후 목록 페이지로 리다이렉트
+    }
 }
 
 

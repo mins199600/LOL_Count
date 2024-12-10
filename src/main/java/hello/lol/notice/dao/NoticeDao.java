@@ -16,4 +16,8 @@ public interface NoticeDao {
     Notice findById(int id);
     //공지사항 저장
     void update(Notice notice);
+    //전체삭제
+    int deleteAllNotices();
+    //단일삭제
+    int deleteNotice(int id);
 }

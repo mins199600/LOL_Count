@@ -24,7 +24,6 @@
         FROM notice
         WHERE id = #{id}
     </select>
-
     <!-- 공지사항 수정 -->
     <update id="update" parameterType="hello.lol.notice.vo.Notice">
         UPDATE notice
@@ -34,4 +33,13 @@
             modified_date = NOW()
         WHERE id = #{id}
     </update>
+    <!--공지사항 전체삭제-->
+    <delete id="deleteAllNotices">
+        DELETE FROM notice
+    </delete>
+    <!-- 공지사항 단일삭제 -->
+    <delete id="deleteNotice" parameterType="int">
+        DELETE FROM notice
+        WHERE id = #{id}
+    </delete>
 </mapper>
