@@ -13,7 +13,7 @@
         </nav>
     </header>
     <main>
-        <!-- 공지사항 상세 정보 -->
+        
         <h1>공지사항 상세보기</h1>
         <table border="1">
             <tr>
@@ -48,7 +48,10 @@
 
         <!-- 뒤로가기 버튼 -->
         <button type="button" onclick="history.back()">뒤로가기</button>
-        <img src="../../../../../../../../AppData/Local/Temp/화면 캡처 2024-12-09 165427.jpg"/>
+        <!--수정하기 버튼-->
+        <form th:action="@{/noticeUpdate/{id}(id=${notice.id})}" method="get">
+            <button type="submit">수정하기</button>
+        </form>
     </main>
     <footer class="footer">
         <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>

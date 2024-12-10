@@ -13,8 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const noticeItems = document.querySelectorAll('.notice-item');
     noticeItems.forEach((item) => {
         const noticeId = item.getAttribute('data-id'); // data-id 속성 값 가져오기
-        item.addEventListener('click', () => {
-            abc(noticeId); // 클릭 시 abc 함수 호출
-        });
     });
 });

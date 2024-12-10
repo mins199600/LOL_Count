@@ -1,6 +1,8 @@
 package hello.lol.notice.vo;
 
 import lombok.Data;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 public class Notice {
@@ -9,6 +11,7 @@ public class Notice {
     private String author;
     private String contents;
     private int views;
-    private String createDate;
-    private String modifiedDate;
+    private LocalDate createDate;
+    private LocalDateTime modifiedDate;
+
 }

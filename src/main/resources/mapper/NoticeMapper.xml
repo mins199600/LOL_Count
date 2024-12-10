@@ -18,5 +18,20 @@
         insert into notice(title, author, contents, views)
         values (#{title}, #{author}, #{contents}, 0);
     </insert>
+    <!-- 공지사항 조회 -->
+    <select id="findById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
+        SELECT id, title, contents, author, create_date, modified_date
+        FROM notice
+        WHERE id = #{id}
+    </select>
 
+    <!-- 공지사항 수정 -->
+    <update id="update" parameterType="hello.lol.notice.vo.Notice">
+        UPDATE notice
+        SET title = #{title},
+            contents = #{contents},
+            author = #{author},
+            modified_date = NOW()
+        WHERE id = #{id}
+    </update>
 </mapper>
