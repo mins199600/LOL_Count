@@ -1,5 +1,5 @@
 
-    /* 전역 스타일 */
+/* 전역 스타일 */
 * {
     margin: 0;
     padding: 0;
@@ -72,13 +72,13 @@ main {
 }
 
 /* 챔피언 카드 스타일 */
-.champion-grid {
+.championList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 1.5rem;
 }
 
-.champion-card {
+.championCard {
     background: white;
     border-radius: 10px;
     padding: 1rem;
@@ -86,11 +86,11 @@ main {
     transition: transform 0.2s;
 }
 
-.champion-card:hover {
+.championCard:hover {
     transform: translateY(-5px);
 }
 
-.champion-card img {
+.championCard img {
     width: 100%;
     height: auto;
     border-radius: 5px;
@@ -112,21 +112,28 @@ main {
     color: #666;
 }
 
+/* oneCost와 twoCost 간의 세로 간격 */
+.championCard[name="oneCost"],
+.championCard[name="twoCost"] {
+    margin-bottom: 20px; /* 세로 간격 설정 */
+}
+
+
 /* 덱 카드 스타일 */
-.deck-container {
+.deckList {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-.deck-card {
+.deckCard {
     background: white;
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.deck-traits {
+.deckTraits {
     margin: 1rem 0;
     display: flex;
     flex-wrap: wrap;

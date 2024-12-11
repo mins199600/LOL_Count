@@ -10,23 +10,437 @@
 <header class="header">
     <nav class="nav-container">
         <div class="logo">TFT 가이드</div>
-            <ul class="nav-menu">
-                <li><a href="items/items">아이템</a></li>
-                <li><a href="board/notice">공지사항</a></li>
-            </ul>
+        <ul class="nav-menu">
+            <li><a href="items/items">아이템</a></li>
+            <li><a href="board/notice">공지사항</a></li>
+        </ul>
     </nav>
 </header>
 
 <main>
     <section id="champions" class="section">
         <h2>챔피언 목록</h2>
-        <div class="champion-grid">
-            <div th:each="champion : ${champions}" class="champion-card">
-                <img th:src="${champion.imageUrl}" th:alt="${champion.name}">
-                <h3 th:text="${champion.name}">챔피언 이름</h3>
-                <div class="champion-info">
-                    <span th:text="${champion.cost + '코스트'}" class="cost"></span>
-                    <span th:text="${champion.traits}" class="traits"></span>
+        <div class="championList">
+            <div class="championCard" name="oneCost">
+                <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Darius.jpg" alt="다리우스">
+                <h3>다리우스</h3>
+            </div>
+
+            <div class="championCard" name="oneCost">
+                <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Draven.jpg" alt="드레이븐">
+                <h3>드레이븐</h3>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Lux.jpg" alt="럭스">
+                    <h3>럭스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Maddie.jpg" alt="매디">
+                    <h3>매디</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Morgana.jpg" alt="모르가나">
+                    <h3>모르가나</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Violet.jpg" alt="바이올렛">
+                    <h3>바이올렛</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vex.jpg" alt="벡스">
+                    <h3>벡스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Steb.jpg" alt="스텝">
+                    <h3>스텝</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Singed.jpg" alt="신지드">
+                    <h3>신지드</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Amumu.jpg" alt="아무무">
+                    <h3>아무무</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Irelia.jpg" alt="이렐리아">
+                    <h3>이렐리아</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zyra.jpg" alt="자이라">
+                    <h3>자이라</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Trundle.jpg" alt="트런들">
+                    <h3>트런들</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="oneCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Powder.jpg" alt="파우더">
+                    <h3>파우더</h3>
+                </div>
+            </div>
+
+            <!--2코스트-->
+            <div class="championCard" name="twoCost">
+                <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renata.jpg" alt="레나타 글라스크">
+                <h3>레나타 글라스크</h3>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Leona.jpg" alt="레오나">
+                    <h3>레오나</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vander.jpg" alt="밴더">
+                    <h3>밴더</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vladimir.jpg" alt="블라디미르">
+                    <h3>블라디미르</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sett.jpg" alt="세트">
+                    <h3>세트</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Akali.jpg" alt="아칼리">
+                    <h3>아칼리</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Urgot.jpg" alt="우르곳">
+                    <h3>우르곳</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zeri.jpg" alt="제리">
+                    <h3>제리</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ziggs.jpg" alt="직스">
+                    <h3>직스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Camille.jpg" alt="카밀">
+                    <h3>카밀</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="twoCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Tristana.jpg" alt="트리스타나">
+                    <h3>트리스타나</h3>
+                </div>
+            </div>
+
+            <!--3코스트-->
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Gangplank.jpg" alt="갱플랭크">
+                    <h3>갱플랭크</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nami.jpg" alt="나미">
+                    <h3>나미</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nunu.jpg" alt="누누와 윌럼프">
+                    <h3>누누와 윌럼프</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renni.jpg" alt="레니">
+                    <h3>레니</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Loris.jpg" alt="로리스">
+                    <h3>로리스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Blitzcrank.jpg" alt="블리츠크랭크">
+                    <h3>블리츠크랭크</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Smeech.jpg" alt="스미치">
+                    <h3>스미치</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Swain.jpg" alt="스웨인">
+                    <h3>스웨인</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Scar.jpg" alt="스카">
+                    <h3>스카</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ezreal.jpg" alt="이즈리얼">
+                    <h3>이즈리얼</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Cassiopeia.jpg" alt="카시오페아">
+                    <h3>카시오페아</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/KogMaw.jpg" alt="코그모">
+                    <h3>코그모</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="threeCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/TwistedFate.jpg" alt="트위스티드 페이트">
+                    <h3>트위스티드 페이트</h3>
+                </div>
+            </div>
+
+            <!--4코스트-->
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Garen.jpg" alt="가렌">
+                    <h3>가렌</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/DrMundo.jpg" alt="문도 박사">
+                    <h3>문도박사</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vi.jpg" alt="바이">
+                    <h3>바이</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Silco.jpg" alt="실코">
+                    <h3>실코</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ambessa.jpg" alt="암베사">
+                    <h3>암베사</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ekko.jpg" alt="에코">
+                    <h3>에코</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Elise.jpg" alt="엘리스">
+                    <h3>앨리스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Illaoi.jpg" alt="일라오이">
+                    <h3>일라오이</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zoe.jpg" alt="조이">
+                    <h3>조이</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Corki.jpg" alt="코르키">
+                    <h3>코르키</h3>
+                </div>
+            </div>
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Twitch.jpg" alt="트위치">
+                    <h3>트위치</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fourCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Heimerdinger.jpg" alt="트위치">
+                    <h3>하이머딩거</h3>
+                </div>
+            </div>
+
+            <!--5코스트-->
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rumble.jpg" alt="럼블">
+                    <h3>럼블</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Leblanc.jpg" alt="르블랑">
+                    <h3>르블랑</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Malzahar.jpg" alt="말자하">
+                    <h3>말자하</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mordekaiser.jpg" alt="모데카이저">
+                    <h3>모데카이저</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sevika.jpg" alt="세비카">
+                    <h3>세비카</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Jayce.jpg" alt="제이스">
+                    <h3>제이스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Jinx.jpg" alt="징크스">
+                    <h3>징크스</h3>
+                </div>
+            </div>
+
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Caitlyn.jpg" alt="케이틀린">
+                    <h3>케이틀린</h3>
+                </div>
+            </div>
+
+            <!--6코스트-->
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mel.jpg" alt="멜">
+                    <h3>멜</h3>
+                </div>
+            </div>
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Viktor.jpg" alt="빅토르">
+                    <h3>빅토르</h3>
+                </div>
+            </div>
+            <div class="championList">
+                <div class="championCard" name="fiveCost">
+                    <img src="https://cdn.dak.gg/tft/images2/sets/set13/portraits/Warwick.jpg" alt="워윅">
+                    <h3>워윅</h3>
                 </div>
             </div>
         </div>
@@ -34,22 +448,7 @@
 
     <section id="decks" class="section">
         <h2>추천 덱</h2>
-        <div class="deck-container">
-            <div th:each="deck : ${decks}" class="deck-card">
-                <h3 th:text="${deck.name}">덱 이름</h3>
-                <div class="deck-traits">
-                          <span th:each="trait : ${deck.traits}"
-                                th:text="${trait}"
-                                class="trait-tag">특성</span>
-                </div>
-                <div class="deck-champions">
-                    <div th:each="champion : ${deck.champions}" class="deck-champion">
-                        <img th:src="${champion.imageUrl}" th:alt="${champion.name}">
-                        <span th:text="${champion.name}">챔피언</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+
     </section>
 </main>
 

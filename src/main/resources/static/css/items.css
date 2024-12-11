@@ -33,7 +33,7 @@
     font-weight: bold;
 }
 
-.nav-container {
+.itemContainer {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;

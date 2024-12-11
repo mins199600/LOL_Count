@@ -3,8 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>신규아이템</title>
+    <link rel="stylesheet" th:href="@{/css/items.css}">
 </head>
 <body>
+<header class="header">
+    <nav class="itemContainer">
+        <div class="head">신규아이템</div>
+    </nav>
+</header>
 
+<main>
+    <section>
+        <h1>실코와 레니 전용 아이템</h1>
+        <table class="itemTable">
+            <thead>
+            <tr>
+                <th>아이템 이미지</th>
+                <th>아이템 이름</th>
+                <th>사용 챔피언</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- 아이템 1 -->
+            <tr>
+                <td>
+                    <img th:src="@{'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT13_Crime_Prismatic_VirulentVirus.png'}" alt="Virulent Virus" style="width: 100px; height: auto;">
+                </td>
+                <td>Virulent Virus</td>
+                <td>실코</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </section>
+</main>
+
+
+
+<footer class="footer">
+    <p>&copy; 2024 TFT 가이드. All rights reserved.</p>
+</footer>
+<script th:src="@{/js/items.js}"></script>
 </body>
 </html>

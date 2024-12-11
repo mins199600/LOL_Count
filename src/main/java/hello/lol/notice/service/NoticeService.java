@@ -15,7 +15,7 @@ public class NoticeService {
     private final NoticeDao noticeDao;
 
     //전체조회
-    public List<Notice> NoticeList() {
+    public List<Notice> noticeList() {
         List<Notice> findAll = noticeDao.NoticeList();
         log.info("조회된 공지사항 데이터: {}", findAll); // 로그 추가
         return findAll;

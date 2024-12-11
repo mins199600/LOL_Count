@@ -13,5 +13,4 @@ public class Notice {
     private int views;
     private LocalDate createDate;
     private LocalDateTime modifiedDate;
-
 }
