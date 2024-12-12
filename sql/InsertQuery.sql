@@ -34,7 +34,7 @@ VALUES ('레나타글라스크', 'https://cdn.dak.gg/tft/images2/sets/set13/port
 
 -- 3코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-values ('갱플랭크', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Gangplank.jpg'),
+VALUES ('갱플랭크', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Gangplank.jpg'),
        ('나미', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nami.jpg'),
        ('누누와 윌럼프', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nunu.jpg'),
        ('레니', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renni.jpg'),
@@ -51,7 +51,7 @@ values ('갱플랭크', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Gan
 
 -- 4코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-values ('가렌', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Garen.jpg'),
+VALUES ('가렌', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Garen.jpg'),
        ('문도박사', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/DrMundo.jpg'),
        ('바이', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vi.jpg'),
        ('실코', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Silco.jpg'),
@@ -67,7 +67,7 @@ values ('가렌', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Garen.jpg
 
 -- 5코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-values ('럼블', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rumble.jpg'),
+VALUES ('럼블', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rumble.jpg'),
        ('르블랑', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/RumLeblancble.jpg'),
        ('말자하', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Malzahar.jpg'),
        ('모데카이저', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mordekaiser.jpg'),
@@ -79,7 +79,7 @@ values ('럼블', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rumble.jp
 
 -- 6코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-values ('멜', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mel.jpg'),
+VALUES ('멜', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mel.jpg'),
        ('빅토르', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Viktor.jpg'),
        ('워윅', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Warwick.jpg');
 -- 6코스트 끝

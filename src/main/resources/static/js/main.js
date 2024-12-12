@@ -1,102 +1,63 @@
-// 스크롤 애니메이션
 document.addEventListener('DOMContentLoaded', function() {
-    // 네비게이션 스무스 스크롤
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // 챔피언 카드 lazy 로딩
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // 챔피언 카드에 페이드인 효과 적용
-    document.querySelectorAll('.champion-card').forEach(card => {
-        observer.observe(card);
-    });
-
-    // 덱 필터링 기능
-    const searchDeck = (searchTerm) => {
-        const deckCards = document.querySelectorAll('.deck-card');
-        deckCards.forEach(card => {
-            const deckName = card.querySelector('h3').textContent.toLowerCase();
-            const traits = Array.from(card.querySelectorAll('.trait-tag'))
-                .map(trait => trait.textContent.toLowerCase());
-
-            const isMatch = deckName.includes(searchTerm.toLowerCase()) ||
-                traits.some(trait => trait.includes(searchTerm.toLowerCase()));
-
-            card.style.display = isMatch ? 'block' : 'none';
-        });
-    };
-
-    // 동적 헤더 스크롤 효과
-    let lastScroll = 0;
-    const header = document.querySelector('.header');
-
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll <= 0) {
-            header.classList.remove('scroll-up');
-            return;
-        }
-
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
-            // 아래로 스크롤
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
-            // 위로 스크롤
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
-        }
-        lastScroll = currentScroll;
-    });
+    loadRecommendedDecks();
 });
 
-// 챔피언 정보 툴팁
-const createTooltip = (element, content) => {
-    const tooltip = document.createElement('div');
-    tooltip.className = 'tooltip';
-    tooltip.textContent = content;
+const loadRecommendedDecks = async () => {
+    try {
+        const response = await fetch('/api/decks/recommend');
+        const decks = await response.json();
 
-    element.addEventListener('mouseenter', (e) => {
-        document.body.appendChild(tooltip);
-        const rect = element.getBoundingClientRect();
-        tooltip.style.top = `${rect.top - tooltip.offsetHeight - 10}px`;
-        tooltip.style.left = `${rect.left + (rect.width/2) - (tooltip.offsetWidth/2)}px`;
-    });
+        const deckListElement = document.getElementById('deckList');
+        deckListElement.innerHTML = ''; // 기존 내용 지우기
 
-    element.addEventListener('mouseleave', () => {
-        if (tooltip.parentNode) {
-            tooltip.parentNode.removeChild(tooltip);
-        }
-    });
+        decks.forEach((deck) => {
+            const deckCard = document.createElement('div');
+            deckCard.className = 'deckCard';
+
+            // 덱 이름 추가
+            const deckName = document.createElement('h3');
+            deckName.textContent = deck.deckName;
+            deckCard.appendChild(deckName);
+
+            // 덱 특성 추가
+            const deckTraits = document.createElement('div');
+            deckTraits.className = 'deck-traits';
+
+            const traits = deck.championNames.split(','); // 특성이 쉼표로 구분된다고 가정
+            traits.forEach((trait) => {
+                const traitTag = document.createElement('span');
+                traitTag.className = 'trait-tag';
+                traitTag.textContent = trait.trim(); // 여분의 공백 제거
+                deckTraits.appendChild(traitTag);
+            });
+
+            deckCard.appendChild(deckTraits);
+
+            // 덱의 특정 챔피언 추가
+            const deckChamps = document.createElement('div');
+            deckChamps.className = 'deck-champs';
+
+            traits.forEach((champ) => {
+                const champDiv = document.createElement('div');
+                champDiv.className = 'champ-div';
+
+                const champImg = document.createElement('img');
+                champImg.src = `https://cdn.dak.gg/tft/images2/sets/set13/portraits/${champ.trim()}.jpg`; // 실제 이미지 URL로 대체
+                champImg.alt = champ.trim();
+                champDiv.appendChild(champImg);
+
+                const champName = document.createElement('span');
+                champName.textContent = champ.trim();
+                champDiv.appendChild(champName);
+
+                deckChamps.appendChild(champDiv);
+            });
+
+            deckCard.appendChild(deckChamps);
+
+            deckListElement.appendChild(deckCard);
+        });
+    } catch (error) {
+        console.error('Error loading recommended decks:', error);
+    }
 };
-
-// 챔피언 카드에 툴팁 적용
-document.querySelectorAll('.champion-card').forEach(card => {
-    const championName = card.querySelector('h3').textContent;
-    createTooltip(card, `${championName}의 상세 정보를 보려면 클릭하세요`);
-});

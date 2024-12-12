@@ -131,6 +131,11 @@ main {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.deckCard:hover {
+    transform: translateY(-5px);
 }
 
 .deckTraits {
@@ -168,7 +173,6 @@ main {
     font-size: 0.8rem;
     display: block;
 }
-
 /* 푸터 스타일 */
 .footer {
     background: #0A1428;
