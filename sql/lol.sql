@@ -6,11 +6,12 @@ CREATE TABLE decks
     image_url  VARCHAR(255)  NULL -- 외부 이미지 링크 넣는 곳
 );
 
+
 -- 2. 챔피언 테이블 생성
 CREATE TABLE champions_list
 (
     champion_id   INT AUTO_INCREMENT PRIMARY KEY,
-    champion_name VARCHAR(50) UNIQUE NOT NULL,
+    champion_name VARCHAR(50) UNIQUE NOT NULL, -- 외부링크로 부터 받는 이미지 파일 이름
     image_url     VARCHAR(255) NOT NULL, -- 외부 이미지 링크 넣는 곳
     deck_id_1     INT,
     deck_id_2     INT,

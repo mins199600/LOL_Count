@@ -1,4 +1,4 @@
-package hello.lol.deck.recommend.config;
+package hello.lol.deck.guide.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -35,4 +35,5 @@ public class RecommendConfig {
     public DataSourceTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource);
     }
+
 }

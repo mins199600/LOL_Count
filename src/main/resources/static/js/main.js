@@ -12,52 +12,45 @@ const loadRecommendedDecks = async () => {
 
         decks.forEach((deck) => {
             const deckCard = document.createElement('div');
-            deckCard.className = 'deckCard';
+            deckCard.className = 'deckCard fade-in';
 
             // 덱 이름 추가
             const deckName = document.createElement('h3');
             deckName.textContent = deck.deckName;
             deckCard.appendChild(deckName);
 
-            // 덱 특성 추가
-            const deckTraits = document.createElement('div');
-            deckTraits.className = 'deck-traits';
+            // 챔피언 목록 컨테이너
+            const championsContainer = document.createElement('div');
+            championsContainer.className = 'deck-champions';
 
-            const traits = deck.championNames.split(','); // 특성이 쉼표로 구분된다고 가정
-            traits.forEach((trait) => {
-                const traitTag = document.createElement('span');
-                traitTag.className = 'trait-tag';
-                traitTag.textContent = trait.trim(); // 여분의 공백 제거
-                deckTraits.appendChild(traitTag);
+            // 챔피언 이름 배열로 변환
+            const championNames = deck.championNames.split(',').map(name => name.trim());
+
+            // 각 챔피언에 대한 요소 생성
+            championNames.forEach(championName => {
+                const championDiv = document.createElement('div');
+                championDiv.className = 'deck-champion';
+
+                const championImg = document.createElement('img');
+                championImg.src = `https://cdn.dak.gg/tft/images2/sets/set13/portraits/${championName}.jpg`;
+                championImg.alt = championName;
+                championImg.onerror = function() {
+                    this.src = 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/default.jpg'; // 기본 이미지
+                };
+
+                const championNameSpan = document.createElement('span');
+                championNameSpan.textContent = championName;
+
+                championDiv.appendChild(championImg);
+                championDiv.appendChild(championNameSpan);
+                championsContainer.appendChild(championDiv);
             });
 
-            deckCard.appendChild(deckTraits);
-
-            // 덱의 특정 챔피언 추가
-            const deckChamps = document.createElement('div');
-            deckChamps.className = 'deck-champs';
-
-            traits.forEach((champ) => {
-                const champDiv = document.createElement('div');
-                champDiv.className = 'champ-div';
-
-                const champImg = document.createElement('img');
-                champImg.src = `https://cdn.dak.gg/tft/images2/sets/set13/portraits/${champ.trim()}.jpg`; // 실제 이미지 URL로 대체
-                champImg.alt = champ.trim();
-                champDiv.appendChild(champImg);
-
-                const champName = document.createElement('span');
-                champName.textContent = champ.trim();
-                champDiv.appendChild(champName);
-
-                deckChamps.appendChild(champDiv);
-            });
-
-            deckCard.appendChild(deckChamps);
-
+            deckCard.appendChild(championsContainer);
             deckListElement.appendChild(deckCard);
         });
     } catch (error) {
         console.error('Error loading recommended decks:', error);
     }
 };
+

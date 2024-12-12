@@ -1,87 +1,92 @@
 INSERT INTO champions_list (champion_name, image_url)
-VALUES ('다리우스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Darius.jpg'),
-       ('드레이븐', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Draven.jpg'),
-       ('럭스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Lux.jpg'),
-       ('매디', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Maddie.jpg'),
-       ('모르가나', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Morgana.jpg'),
-       ('바이올렛', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Violet.jpg'),
-       ('벡스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vex.jpg'),
-       ('스텝', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Steb.jpg'),
-       ('신지드', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Singed.jpg'),
-       ('아무무', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Amumu.jpg'),
-       ('이렐리아', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Irelia.jpg'),
-       ('자이라', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zyra.jpg'),
-       ('트런들', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Trundle.jpg'),
-       ('파우더', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Powder.jpg');
+VALUES ('Darius', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Darius.jpg'),
+       ('Draven', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Draven.jpg'),
+       ('Lux', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Lux.jpg'),
+       ('Maddie', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Maddie.jpg'),
+       ('Morgana', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Morgana.jpg'),
+       ('Violet', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Violet.jpg'),
+       ('Vex', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vex.jpg'),
+       ('Steb', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Steb.jpg'),
+       ('Singed', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Singed.jpg'),
+       ('Amumu', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Amumu.jpg'),
+       ('Irelia', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Irelia.jpg'),
+       ('Zyra', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zyra.jpg'),
+       ('Trundle', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Trundle.jpg'),
+       ('Powder', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Powder.jpg');
 -- 1코스트 끝
+
 
 -- 2코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-VALUES ('레나타글라스크', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renata.jpg'),
-       ('레오나', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Leona.jpg'),
-       ('렐', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rell.jpg'),
-       ('트리스타나', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Tristana.jpg'),
-       ('녹턴', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nocturne.jpg'),
-       ('벤더', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vander.jpg'),
-       ('블라디미르', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vladimir.jpg'),
-       ('세트', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sett.jpg'),
-       ('아칼리', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Akali.jpg'),
-       ('우르곳', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Urgot.jpg'),
-       ('제리', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zeri.jpg'),
-       ('직스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ziggs.jpg'),
-       ('카밀', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Camille.jpg');
+VALUES ('Renata', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renata.jpg'),
+       ('Leona', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Leona.jpg'),
+       ('Rell', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rell.jpg'),
+       ('Tristana', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Tristana.jpg'),
+       ('Nocturne', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nocturne.jpg'),
+       ('Vander', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vander.jpg'),
+       ('Vladimir', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vladimir.jpg'),
+       ('Sett', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sett.jpg'),
+       ('Akali', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Akali.jpg'),
+       ('Urgot', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Urgot.jpg'),
+       ('Zeri', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zeri.jpg'),
+       ('Ziggs', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ziggs.jpg'),
+       ('Camille', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Camille.jpg');
 -- 2코스트 끝
 
 -- 3코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-VALUES ('갱플랭크', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Gangplank.jpg'),
-       ('나미', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nami.jpg'),
-       ('누누와 윌럼프', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nunu.jpg'),
-       ('레니', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renni.jpg'),
-       ('로리스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Loris.jpg'),
-       ('블리츠크랭크', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Blitzcrank.jpg'),
-       ('스미치', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Smeech.jpg'),
-       ('스웨인', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Swain.jpg'),
-       ('스카', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Scar.jpg'),
-       ('이즈리얼', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ezreal.jpg'),
-       ('카시오페아', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Cassiopeia.jpg'),
-       ('코그모', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/KogMaw.jpg'),
-       ('트위스티드 페이트', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/TwistedFate.jpg');
+VALUES ('Gangplank', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Gangplank.jpg'),
+       ('Nami', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nami.jpg'),
+       ('Nunu', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nunu.jpg'),
+       ('Renni', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renni.jpg'),
+       ('Loris', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Loris.jpg'),
+       ('Blitzcrank', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Blitzcrank.jpg'),
+       ('Smeech', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Smeech.jpg'),
+       ('Swain', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Swain.jpg'),
+       ('Scar', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Scar.jpg'),
+       ('Ezreal', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ezreal.jpg'),
+       ('Cassiopeia', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Cassiopeia.jpg'),
+       ('KogMaw', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/KogMaw.jpg'),
+       ('TwistedFate', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/TwistedFate.jpg');
 -- 3코스트 끝
+UPDATE champions_list
+SET champion_name = 'Mel'
+WHERE champion_name = '멜';
 
 -- 4코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-VALUES ('가렌', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Garen.jpg'),
-       ('문도박사', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/DrMundo.jpg'),
-       ('바이', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vi.jpg'),
-       ('실코', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Silco.jpg'),
-       ('암베사', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ambessa.jpg'),
-       ('에코', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ekko.jpg'),
-       ('앨리스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Elise.jpg'),
-       ('일라오이', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Illaoi.jpg'),
-       ('조이', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zoe.jpg'),
-       ('코르키', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Corki.jpg'),
-       ('트위치', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Twitch.jpg'),
-       ('하이머딩거', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Heimerdinger.jpg');
+VALUES ('Garen', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Garen.jpg'),
+       ('DrMundo', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/DrMundo.jpg'),
+       ('Vi', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vi.jpg'),
+       ('Silco', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Silco.jpg'),
+       ('Ambessa', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ambessa.jpg'),
+       ('Ekko', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Ekko.jpg'),
+       ('Elise', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Elise.jpg'),
+       ('Illaoi', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Illaoi.jpg'),
+       ('Zoe', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Zoe.jpg'),
+       ('Corki', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Corki.jpg'),
+       ('Twitch', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Twitch.jpg'),
+       ('Heimerdinger', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Heimerdinger.jpg');
 -- 4코스트 끝
+
 
 -- 5코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-VALUES ('럼블', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rumble.jpg'),
-       ('르블랑', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/RumLeblancble.jpg'),
-       ('말자하', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Malzahar.jpg'),
-       ('모데카이저', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mordekaiser.jpg'),
-       ('세비카', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sevika.jpg'),
-       ('제이스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Jayce.jpg'),
-       ('징크스', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Jinx.jpg'),
-       ('케이틀린', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Caitlyn.jpg');
+VALUES ('Rumble', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rumble.jpg'),
+       ('RumLeblancble', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/RumLeblancble.jpg'),
+       ('Malzahar', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Malzahar.jpg'),
+       ('Mordekaiser', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mordekaiser.jpg'),
+       ('Sevika', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sevika.jpg'),
+       ('Jayce', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Jayce.jpg'),
+       ('Jinx', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Jinx.jpg'),
+      ('Caitlyn', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Caitlyn.jpg');
 -- 5코스트 끝
 
 -- 6코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
-VALUES ('멜', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mel.jpg'),
-       ('빅토르', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Viktor.jpg'),
-       ('워윅', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Warwick.jpg');
+VALUES ('Mel', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Mel.jpg'),
+       ('Viktor', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Viktor.jpg'),
+       ('Warwick', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Warwick.jpg');
 -- 6코스트 끝
 
 -- 덱 인서트

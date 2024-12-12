@@ -1,4 +1,4 @@
-package hello.lol.deck.recommend.repository;
+package hello.lol.deck.guide.repository;
 
 public class DeckDto {
 
