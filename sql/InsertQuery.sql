@@ -21,7 +21,7 @@ VALUES ('레나타글라스크', 'https://cdn.dak.gg/tft/images2/sets/set13/port
        ('레오나', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Leona.jpg'),
        ('렐', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Rell.jpg'),
        ('트리스타나', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Tristana.jpg'),
-       ('녹턴','https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nocturne.jpg'),
+       ('녹턴', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Nocturne.jpg'),
        ('벤더', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vander.jpg'),
        ('블라디미르', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Vladimir.jpg'),
        ('세트', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Sett.jpg'),
@@ -121,7 +121,7 @@ VALUES (1, 14), -- 파우더
 
 -- 검은 장미단
 INSERT INTO deck_champions_mapping (deck_id, champion_id)
-VALUES (2, 5), -- 모르가나
+VALUES (2, 5),  -- 모르가나
        (2, 19), -- 블라디
        (2, 36), -- 카시오페아
        (2, 58), -- 앨리스
@@ -139,7 +139,7 @@ VALUES (3, 13), -- 모르가나
 
 -- 반군
 INSERT INTO deck_champions_mapping (deck_id, champion_id)
-VALUES (4, 7), -- 벡스
+VALUES (4, 7),  -- 벡스
        (4, 11), -- 이렐리아
        (4, 20), -- 세트
        (4, 21), -- 아칼리
@@ -166,7 +166,7 @@ VALUES (6, 12), -- 자이라
 
 -- 아카데미
 INSERT INTO deck_champions_mapping (deck_id, champion_id)
-VALUES (7, 3), -- 럭스
+VALUES (7, 3),  -- 럭스
        (7, 16), -- 레오나
        (7, 35), -- 이즈리얼
        (7, 63), -- 하이머딩거
@@ -185,3 +185,133 @@ INSERT INTO deck_champions_mapping (deck_id, champion_id)
 VALUES (9, 23), -- 제리
        (9, 34), -- 녹턴
        (9, 57); -- 블리츠
+
+-- 정복자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (10, 1),  -- 다리우스
+       (10, 2),  -- 드레이븐
+       (10, 17), -- 렐
+       (10, 33), -- 스웨인
+       (10, 56), -- 암베사
+       (10, 67); -- 모데카이저
+
+-- 집행자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (11, 4),  -- 매디
+       (11, 8),  -- 스텝
+       (11, 25), -- 카밀
+       (11, 30), -- 로리스
+       (11, 38), -- 트페
+       (11, 54), -- 바이
+       (11, 71); -- 케틀
+
+-- 화공남작
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (12, 9),  -- 신지드
+       (12, 15), -- 레나타
+       (12, 29), -- 레니
+       (12, 32), -- 스미치
+       (12, 55), -- 실코
+       (12, 68); -- 세비카
+
+-- 감시자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (13, 9),  -- 신지드
+       (13, 11), -- 이렐리아
+       (13, 16), -- 레오나
+       (13, 17), -- 렐
+       (13, 30), -- 로리스
+       (13, 59), -- 일라오이
+       (13, 64); -- 럼블
+
+-- 기동타격대
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (14, 80), -- 녹턴
+       (14, 21), -- 아칼리
+       (14, 38), -- 트페
+       (14, 56); -- 암베사
+
+-- 난동꾼
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (15, 8),  -- 스텝
+       (15, 13), -- 트런들
+       (15, 20), -- 세트
+       (15, 28), -- 누누
+       (15, 29), -- 레니
+       (15, 58); -- 앨리스
+
+-- 마법사
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (16, 3),  -- 럭스
+       (16, 12), -- 자이라
+       (16, 19), -- 블라디미르
+       (16, 27), -- 나미
+       (16, 33), -- 스웨인
+       (16, 60), -- 조이
+       (16, 65); -- 르블랑
+
+-- 매복자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (17, 14), -- 파우더
+       (17, 25), -- 카밀
+       (17, 32), -- 스미치
+       (17, 57), -- 에코
+       (17, 70); -- 징크스
+
+-- 선도자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (18, 5),  -- 모르가나
+       (18, 7),  -- 벡스
+       (18, 15), -- 레나타
+       (18, 17), -- 렐
+       (18, 28), -- 누누
+       (18, 63), -- 하이머딩거
+       (18, 66); -- 말자하
+
+-- 저격수
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (19, 4),  -- 매디
+       (19, 23), -- 제리
+       (19, 37), -- 코그모
+       (19, 62), -- 트위치
+       (19, 71); -- 케틀
+
+-- 주시자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (20, 1), -- 다리우스
+       (20, 18), -- 벤더
+       (20, 19), -- 블라디
+       (20, 34), -- 스카
+       (20, 59); -- 가렌
+
+-- 지배자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (21, 24), -- 직스
+        (21, 31), -- 블리츠
+        (21, 36), -- 카시오페아
+        (21, 53), -- 문도박사
+        (21, 55), -- 실코
+        (21, 67); -- 모데카이저
+
+-- 투사
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (22, 2), -- 드레이븐
+       (22, 6), -- 바이올렛
+       (22, 22), -- 우르곳
+       (22, 26), -- 갱플랭크
+       (22, 54), -- 바이
+       (22, 68); -- 세비카
+
+-- 포수
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (23, 22), -- 우르곳
+       (23, 79), -- 트타
+       (23, 35), -- 이즈리얼
+       (23, 61); -- 코르키
+
+-- 형태전환자
+INSERT INTO deck_champions_mapping (deck_id, champion_id)
+VALUES (24, 26), -- 갱플랭크
+       (24, 33), -- 스웨인
+       (24, 58), -- 앨리스
+       (24, 69); -- 제이스
