@@ -35,5 +35,4 @@ public class RecommendConfig {
     public DataSourceTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource);
     }
-
 }
