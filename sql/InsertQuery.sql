@@ -320,3 +320,29 @@ VALUES (24, 26), -- 갱플랭크
        (24, 33), -- 스웨인
        (24, 58), -- 앨리스
        (24, 69); -- 제이스
+
+-- 재료아이템
+INSERT INTO material_item (material_name, image_url)
+VALUES ('TFT_Item_BFSword',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png'),            -- B.F 대검
+       ('TFT_Item_RecurveBow',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RecurveBow.png'),         -- 곡궁
+       ('TFT_Item_ChainVest',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ChainVest.png'),          -- 갑옷
+       ('TFT_Item_NegatronCloak',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_NegatronCloak.png'),      -- 조개
+       ('TFT_Item_NeedlesslyLargeRod',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_NeedlesslyLargeRod.png'), -- 지팡이
+       ('TFT_Item_TearOfTheGoddess',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TearOfTheGoddess.png'),   -- 눈물
+       ('TFT_Item_GiantsBelt',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GiantsBelt.png'),         -- 벨트
+       ('TFT_Item_SparringGloves',
+        'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SparringGloves.png'); -- 장갑
+
+-- 완성아이템
+
+
+ALTER TABLE material_item
+    MODIFY COLUMN material_id INT AUTO_INCREMENT PRIMARY KEY;
+
