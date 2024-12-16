@@ -341,8 +341,100 @@ VALUES ('TFT_Item_BFSword',
         'https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SparringGloves.png'); -- 장갑
 
 -- 완성아이템
+INSERT INTO crafted_item (crafted_name, image_url)
+values ('Deathblade','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Deathblade.png'), -- 죽음의검
+       ('MadredsBloodrazor','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_MadredsBloodrazor.png'), -- 거인학살자
+       ('GuardianAngel','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuardianAngel.png'), -- 밤의끝자락
+       ('Bloodthirster','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Bloodthirster.png'), -- 피바라기
+       ('HextechGunblade','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_HextechGunblade.png'), -- 마법공학의 총검
+       ('SpearOfShojin','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpearOfShojin.png'), -- 쇼진
+       ('SteraksGage','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SteraksGage.png'), -- 스테락
+       ('InfinityEdge','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_InfinityEdge.png'), -- 무한의대검
+       ('RapidFireCannon','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RapidFireCannon.png'), -- 레드
+       ('TitansResolve','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_TitansResolve.png'), -- 거결
+       ('RunaansHurricane','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RunaansHurricane.png'), -- 루난
+       ('GuinsoosRageblade','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GuinsoosRageblade.png'), -- 구인수
+       ('StatikkShiv','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_StatikkShiv.png'), -- 스테틱
+       ('Leviathan','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Leviathan.png'), -- 내셔
+       ('LastWhisper','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_LastWhisper.png'), -- 최후의 속삭임
+       ('BrambleVest','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BrambleVest.png'), -- 가시갑옷
+       ('GargoyleStoneplate','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_GargoyleStoneplate.png'), -- 가고일
+       ('Crownguard','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Crownguard.png'), -- 크라운가드
+       ('FrozenHeart','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_FrozenHeart.png'), -- 수호자맹세
+       ('RedBuff','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RedBuff.png'), -- 태불망
+       ('NightHarvester','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_NightHarvester.png'), -- 굳심
+       ('DragonsClaw','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_DragonsClaw.png'), -- 용발
+       ('IonicSpark','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_IonicSpark.png'), -- 이온충격기
+       ('AdaptiveHelm','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_AdaptiveHelm.png'), -- 적응형 투구
+       ('SpectralGauntlet','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_SpectralGauntlet.png'), -- 저녁갑주
+       ('RabadonsDeathcap','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_RabadonsDeathcap.png'), -- 백캡
+       ('ArchangelsStaff','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_ArchangelsStaff.png'), -- 대천사
+       ('Morellonomicon','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Morellonomicon.png'), -- 모렐
+       ('JeweledGauntlet','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_JeweledGauntlet.png'), -- 보건
+       ('BlueBuff','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BlueBuff.png'), -- 블루
+       ('Redemption','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Redemption.png'), -- 구원
+       ('UnstableConcoction','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_UnstableConcoction.png'), -- 정손
+       ('WarmogsArmor','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_WarmogsArmor.png'), -- 워모그
+       ('PowerGauntlet','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_PowerGauntlet.png'), -- 방파
+       ('Quicksilver','https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Quicksilver.png'); -- 수은
 
+-- 재료템 한국이름
+INSERT INTO material_item_name_ko(material_name_ko)
+VALUES ('B.F. 대검'),
+       ('곡궁'),
+       ('쇠사슬 조끼'),
+       ('음전자 망토'),
+       ('쓸데없이 큰 지팡이'),
+       ('여신의 눈물'),
+       ('거인의 허리띠'),
+       ('연습용 장갑');
 
-ALTER TABLE material_item
-    MODIFY COLUMN material_id INT AUTO_INCREMENT PRIMARY KEY;
+-- 완성템 한국이름
+INSERT INTO crafted_item_name_ko(crafted_name_ko)
+values ('죽음의검'),
+       ('거인학살자'),
+       ('밤의끝자락'),
+       ('피바라기'),
+       ('마법공학의 총검'),
+       ('쇼진의 창'),
+       ('스테락의 도전'),
+       ('무한의 대검'),
+       ('붉은 덩굴정령'),
+       ('루난의 허리케인'),
+       ('구인수의 격노검'),
+       ('스태틱의 단검'),
+       ('내셔의 이빨'),
+       ('최후의 속삭임'),
+       ('가시갑옷'),
+       ('가고일돌갑옷'),
+       ('크라운가드'),
+       ('수호자의 맹세'),
+       ('태양불꽃망토'),
+       ('굳건한 심장'),
+       ('용의발톱'),
+       ('이온충격기'),
+       ('적응형투구'),
+       ('저녁갑주'),
+       ('수은'),
+       ('라바돈의 죽음모자'),
+       ('대천사의 지팡이'),
+       ('모렐로노미콘'),
+       ('보석건틀릿'),
+       ('푸른파수꾼'),
+       ('구원'),
+       ('정의의 손길'),
+       ('워모그의 갑옷'),
+       ('방패파괴자'),
+       ('거인의결의');
+
+-- crafted_material_mapping 인서트
+-- 공격력
+INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values(1,1,1); -- 죽음의검
+-- 주문력
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (14,5,5);
+-- 탱커
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (33,7,7);
 

@@ -29,6 +29,7 @@ CREATE TABLE deck_champions_mapping
     CONSTRAINT fk_champion FOREIGN KEY (champion_id) REFERENCES champions_list(champion_id) ON DELETE CASCADE
 );
 
+-- 재료템
 CREATE TABLE material_item(
     material_id INT AUTO_INCREMENT NOT NULL,
     material_name VARCHAR(50) NOT NULL,
@@ -36,6 +37,7 @@ CREATE TABLE material_item(
     CONSTRAINT pk_material PRIMARY KEY(material_id)
 );
 
+-- 재료템 한국이름
 CREATE TABLE material_item_name_ko
 (
     material_id      INT AUTO_INCREMENT NOT NULL,
@@ -43,6 +45,7 @@ CREATE TABLE material_item_name_ko
     CONSTRAINT pk_material PRIMARY KEY (material_id)
 );
 
+-- 완성아이템
 CREATE TABLE crafted_item
 (
     crafted_id      INT AUTO_INCREMENT PRIMARY KEY,
@@ -50,15 +53,62 @@ CREATE TABLE crafted_item
     image_url       VARCHAR(255) NOT NULL
 );
 
+-- 완성아이템 한국이름
 CREATE TABLE crafted_item_name_ko
 (
-    crafted_id      INT         NOT NULL,
+    crafted_id_name_ko      INT AUTO_INCREMENT NOT NULL,
     crafted_name_ko VARCHAR(50) NOT NULL,
-    CONSTRAINT pk_material PRIMARY KEY (crafted_id)
+    CONSTRAINT pk_material PRIMARY KEY (crafted_id_name_ko)
 );
 
+-- 재료 + 완성아이템
 CREATE TABLE crafted_material_mapping(
     crafted_id INT NOT NULL,
     material_id INT NOT NULL,
-    CONSTRAINT pk_material PRIMARY KEY(crafted_id, material_id)
+    crafted_id_name_ko INT NOT NULL,
+        CONSTRAINT pk_material PRIMARY KEY(crafted_id, material_id, crafted_id_name_ko)
+);
+
+-- 재료템
+CREATE TABLE material_item(
+                              material_id INT AUTO_INCREMENT NOT NULL,
+                              material_name VARCHAR(50) NOT NULL,
+                              image_url VARCHAR(255) NOT NULL,
+                              CONSTRAINT pk_material PRIMARY KEY(material_id)
+);
+
+-- 재료템 한국이름
+CREATE TABLE material_item_name_ko
+(
+    material_id      INT AUTO_INCREMENT NOT NULL,
+    material_name_ko VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_material PRIMARY KEY (material_id)
+);
+
+-- 완성아이템
+CREATE TABLE crafted_item
+(
+    crafted_id      INT AUTO_INCREMENT PRIMARY KEY,
+    crafted_name    VARCHAR(50) NOT NULL,
+    image_url       VARCHAR(255) NOT NULL
+);
+
+-- 완성아이템 한국이름
+CREATE TABLE crafted_item_name_ko
+(
+    crafted_id_name_ko      INT AUTO_INCREMENT NOT NULL,
+    crafted_name_ko VARCHAR(50) NOT NULL,
+    CONSTRAINT pk_material PRIMARY KEY (crafted_id_name_ko)
+);
+
+-- 재료 + 완성아이템
+CREATE TABLE crafted_material_mapping (
+                                          id INT AUTO_INCREMENT NOT NULL,
+                                          crafted_id INT NOT NULL, -- crafted_item의 ID
+                                          material_id_1 INT NOT NULL, -- 첫 번째 material_item의 ID
+                                          material_id_2 INT NOT NULL, -- 두 번째 material_item의 ID
+                                          PRIMARY KEY (id),
+                                          CONSTRAINT fk_crafted FOREIGN KEY (crafted_id) REFERENCES crafted_item(crafted_id) ON DELETE CASCADE ON UPDATE CASCADE,
+                                          CONSTRAINT fk_material_1 FOREIGN KEY (material_id_1) REFERENCES material_item(material_id) ON DELETE CASCADE ON UPDATE CASCADE,
+                                          CONSTRAINT fk_material_2 FOREIGN KEY (material_id_2) REFERENCES material_item(material_id) ON DELETE CASCADE ON UPDATE CASCADE
 );
