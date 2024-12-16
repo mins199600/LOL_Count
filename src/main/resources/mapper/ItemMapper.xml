@@ -4,21 +4,33 @@
 <mapper namespace="hello.lol.item.repository.ItemDao">
 
     <!-- 특정 타입의 아이템 데이터를 가져오는 쿼리 -->
-    <select id="findAllItemList" resultType="hello.lol.item.repository.ItemDto">
-        SELECT crafted_id AS craftedId,
-        material_id_1 AS materialId1,
-        material_id_2 AS materialId2
-        FROM crafted_material_mapping
+    <select id="findAllItemList" parameterType="string" resultType="map">
+        SELECT
+        cm.crafted_id AS craftedId,
+        ci.crafted_name AS craftedName,
+        ci.image_url AS craftedImageUrl,
+        mi1.material_name AS materialName1,
+        mi1.image_url AS materialImageUrl1,
+        mi2.material_name AS materialName2,
+        mi2.image_url AS materialImageUrl2
+        FROM
+        crafted_material_mapping cm
+        JOIN
+        crafted_item ci ON cm.crafted_id = ci.crafted_id
+        JOIN
+        material_item mi1 ON cm.material_id_1 = mi1.material_id
+        JOIN
+        material_item mi2 ON cm.material_id_2 = mi2.material_id
         WHERE
         <choose>
             <when test="type == 'PhysicalWeapon'">
-                crafted_id = 1
+                cm.crafted_id = 1
             </when>
             <when test="type == 'MagicItem'">
-                crafted_id = 14
+                cm.crafted_id = 14
             </when>
             <when test="type == 'ShieldItem'">
-                crafted_id = 33
+                cm.crafted_id = 33
             </when>
         </choose>
     </select>

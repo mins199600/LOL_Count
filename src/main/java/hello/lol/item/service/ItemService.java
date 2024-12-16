@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 
 @Service
@@ -14,7 +15,7 @@ public class ItemService {
 
     private final ItemDao itemDao;
 
-    public List<ItemDto> findAllItemList(String type) {
+    public List<Map<String, Object>> findAllItemList(String type) {
         return itemDao.findAllItemList(type);
     }
 }

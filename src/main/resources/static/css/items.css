@@ -86,51 +86,35 @@ body {
 }
 
 /* 아이템 리스트 */
-
-.itemTitle {
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-align: left;
-    padding: 1.4rem;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-.itemList table {
-    width: 50%;
-    border-collapse: collapse;
-}
-
-.itemCard {
-    list-style: none;
-    margin-top: 1rem;
+.query-display {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between; /*이미지 사이 간격*/
-    gap: 0.3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.item-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center;
-    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.itemCard li {
-    flex: 1; /* 각 아이템을 동일한 크기로 */
-    font-weight: bold;
-    color: #333;
-    margin: auto; /* 아이템 간의 간격 */
-    list-style-type: none;
-    display: inline-block; /* 가로로 정렬합니다 */
-}
-
-.itemCard li:last-child {
-    margin-right: 0; /* 마지막 아이템의 오른쪽 여백 제거 */
-    margin-left: 0;
-}
-
-.itemCard img {
-    width: 50px; /* 이미지 크기 조정 */
-    height: 50px;
+.crafted-item img,
+.materials img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
     margin-bottom: 0.5rem;
-    border-radius: 5px; /* 이미지 모서리를 둥글게 */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+.materials {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
 }

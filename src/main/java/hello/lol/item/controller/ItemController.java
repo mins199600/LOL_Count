@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,7 +16,7 @@ public class ItemController {
     private final ItemService itemService;
 
     @GetMapping("/{type}")
-    public List<ItemDto> getItemList(@PathVariable String type){
+    public List<Map<String, Object>> getItemList(@PathVariable String type){
         return itemService.findAllItemList(type);
     }
 }

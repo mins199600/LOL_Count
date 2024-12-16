@@ -30,19 +30,45 @@ function fetchItems(type) {
         });
 }
 
-// 데이터를 화면에 표시
+// 데이터를 화면에 이미지로 표시
 function displayItems(items) {
     const displayElement = document.getElementById("queryDisplay");
+    displayElement.innerHTML = ""; // 기존 내용 초기화
 
-    // 데이터를 HTML로 변환하여 표시
-    const queries = items.map(item =>
-        `INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2) VALUES (${item.craftedId}, ${item.materialId1}, ${item.materialId2});`
-    ).join("\n");
+    items.forEach(item => {
+        // 완성 아이템 이미지
+        const craftedItemDiv = document.createElement("div");
+        craftedItemDiv.className = "crafted-item";
 
-    displayElement.textContent = queries;
-    displayElement.style.whiteSpace = "pre-wrap";
-    displayElement.style.marginTop = "20px";
-    displayElement.style.padding = "10px";
-    displayElement.style.border = "1px solid #ccc";
-    displayElement.style.backgroundColor = "#f9f9f9";
+        const craftedImage = document.createElement("img");
+        craftedImage.src = item.craftedImageUrl;
+        craftedImage.alt = item.craftedName;
+        craftedItemDiv.appendChild(craftedImage);
+
+        const craftedName = document.createElement("p");
+        craftedName.textContent = item.craftedName;
+        craftedItemDiv.appendChild(craftedName);
+
+        // 재료 아이템 이미지
+        const materialsDiv = document.createElement("div");
+        materialsDiv.className = "materials";
+
+        const materialImage1 = document.createElement("img");
+        materialImage1.src = item.materialImageUrl1;
+        materialImage1.alt = item.materialName1;
+        materialsDiv.appendChild(materialImage1);
+
+        const materialImage2 = document.createElement("img");
+        materialImage2.src = item.materialImageUrl2;
+        materialImage2.alt = item.materialName2;
+        materialsDiv.appendChild(materialImage2);
+
+        // 아이템과 재료를 묶어서 추가
+        const itemContainer = document.createElement("div");
+        itemContainer.className = "item-container";
+        itemContainer.appendChild(craftedItemDiv);
+        itemContainer.appendChild(materialsDiv);
+
+        displayElement.appendChild(itemContainer);
+    });
 }
