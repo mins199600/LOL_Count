@@ -23,6 +23,21 @@ body {
     display: block;
 }
 
+.itemList {
+    margin-top: 7rem; /* 헤더 높이만큼 간격 추가 */
+    display: flex; /* 아이템을 가로로 정렬 */
+    justify-content: space-between; /* 중앙 정렬 */
+    align-items: center; /* 세로 정렬 */
+    gap: 1.5rem; /* 아이템 간 간격 (여백 줄이기) */
+    padding: 2rem; /* 리스트 전체 여백 */
+    max-width: 800px; /* 리스트의 최대 너비 설정 */
+    margin-left: auto; /* 중앙 정렬을 위한 auto margin */
+    margin-right: auto; /* 중앙 정렬을 위한 auto margin */
+    background-color: #f4f4f9; /* 리스트 배경색 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 리스트 그림자 */
+}
+
 .footer {
     background: #0A1428;
     color: white;
@@ -71,23 +86,6 @@ body {
 }
 
 /* 아이템 리스트 */
-.itemList {
-    width: 70%;
-    height: auto;
-    display: flex;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 0.5rem 1rem 0rem 0rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.itemList thead {
-    background-color: #f4f4f9; /* 배경색 추가 */
-}
 
 .itemTitle {
     font-weight: bold;
@@ -136,4 +134,3 @@ body {
     border-radius: 5px; /* 이미지 모서리를 둥글게 */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
 }
-

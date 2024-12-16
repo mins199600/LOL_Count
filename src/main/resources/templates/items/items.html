@@ -17,64 +17,16 @@
         </nav>
     </header>
 
-    <div class="wrap">
-        <div>
-            <h3 class="PhysicalWeapon">공격력 아이템</h3>
-            <h3 class="MagicItem">주문력 아이템</h3>
-            <h3 class="ShieldItem">탱커 아이템</h3>
-        </div>
-
-        <div class="itemList">
-            <span class="itemTitle">죽음의 검</span>
-            <table>
-                <tbody>
-                <tr>
-                    <td class="itemImage">
-                        <ul class="itemCard" name="itemCard">
-                            <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png" alt="B.F.대검"></li> +
-                            <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png" alt="B.F.대검"></li> =
-                            <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Deathblade.png" alt="죽음의 검"></li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <div class="itemList">
-            <span class="itemTitle">죽음의 검</span>
-            <table>
-                <tbody>
-                <tr>
-                    <td class="itemImage">
-                        <ul class="itemCard" name="itemCard">
-                            <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png" alt="B.F.대검"></li> +
-                            <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png" alt="B.F.대검"></li> =
-                            <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Deathblade.png" alt="죽음의 검"></li>
-                        </ul>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
     <div class="itemList">
-        <span class="itemTitle">죽음의 검</span>
-        <table>
-            <tbody>
-            <tr>
-                <td class="itemImage">
-                    <ul class="itemCard" name="itemCard">
-                        <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png" alt="B.F.대검"></li> +
-                        <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_BFSword.png" alt="B.F.대검"></li> =
-                        <li><img src="https://ddragon.leagueoflegends.com/cdn/14.23.1/img/tft-item/TFT_Item_Deathblade.png" alt="죽음의 검"></li>
-                    </ul>
-                </td>
-            </tr>
-            </tbody>
-        </table>
+        <h3 class="item" th:onclick="getAttackItem()">공격력 아이템</h3>
+        <h3 class="item" th:onclick="getMagicItem()">주문력 아이템</h3>
+        <h3 class="item" th:onclick="getTankItem()">탱커 아이템</h3>
     </div>
+
+    <div id="queryDisplay">
+        <!--아이템을 표시할 부분-->
     </div>
+
 
     <footer class="footer">
         <p>&copy; 2024 Are you ready to fight? ●Always-Ready●</p>
