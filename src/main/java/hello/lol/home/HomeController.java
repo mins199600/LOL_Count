@@ -17,4 +17,8 @@ public class HomeController {
         return "/main";
     }
 
+    @GetMapping("/items/items")
+    public String items(){
+        return "/items/items";
+    }
 }
