@@ -448,7 +448,7 @@ values (12,2,5); -- 구인수
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
 values (15,2,8); -- 최후의 속삭임
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
-values (24,4,8); -- 적응형투구
+values (24,4,6); -- 적응형투구
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
 values (32,8,6); -- 정손
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
@@ -471,13 +471,13 @@ values (13,2,6); -- 스테틱
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
 values (26,5,5); -- 라바돈
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
-values (27,5,8); -- 대천사
+values (27,5,6); -- 대천사
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
 values (28,5,7); -- 모렐로
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
 values (29,5,8); -- 보건
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
-values (30,8,8); -- 블루
+values (30,6,6); -- 블루
 
 -- 탱커
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
