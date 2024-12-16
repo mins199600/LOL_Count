@@ -427,14 +427,82 @@ values ('죽음의검'),
        ('방패파괴자'),
        ('거인의결의');
 
+TRUNCATE TABLE crafted_material_mapping;
+
 -- crafted_material_mapping 인서트
 -- 공격력
 INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2)
 values(1,1,1); -- 죽음의검
+INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (2,1,2); -- 거인학살자
+INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (3,1,3); -- 밤의끝자락
+INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (4,1,4); -- 피바라기
+INSERT INTO crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (8,1,8); -- 무한의대검
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (11,2,4); -- 루난
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (12,2,5); -- 구인수
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (15,2,8); -- 최후의 속삭임
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (24,4,8); -- 적응형투구
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (32,8,6); -- 정손
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (34,7,8); -- 방파자
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (35,4,8); -- 수은
+
+
 -- 주문력
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
-values (14,5,5);
+values (14,7,2); -- 내셔의 이빨
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (5,1,5); -- 마법총검
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (6,1,6); -- 쇼진
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (9,2,2); -- 레드
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (13,2,6); -- 스테틱
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (26,5,5); -- 라바돈
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (27,5,8); -- 대천사
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (28,5,7); -- 모렐로
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (29,5,8); -- 보건
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (30,8,8); -- 블루
+
 -- 탱커
 insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
-values (33,7,7);
-
+values (33,7,7); -- 워모그
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (7,1,7); -- 스테락
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (10,3,2); -- 거결
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (16,3,3); -- 가시갑옷
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (17,3,4); -- 가고일
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (18,3,5); -- 크라운가드
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (19,3,6); -- 수호자의맹세
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (20,3,7); -- 태양불꽃망토
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (21,3,8); -- 굳건한심장
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (22,4,4); -- 용발
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (23,4,5); -- 이온충격기
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (25,4,7); -- 저녁갑주
+insert into crafted_material_mapping(crafted_id, material_id_1, material_id_2)
+values (31,6,7); -- 구원

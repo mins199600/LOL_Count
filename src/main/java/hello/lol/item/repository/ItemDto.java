@@ -9,7 +9,6 @@ public class ItemDto {
     private String materialName2;
     private String materialImageUrl2;
 
-    // Getters and Setters
     public int getCraftedId() {
         return craftedId;
     }
