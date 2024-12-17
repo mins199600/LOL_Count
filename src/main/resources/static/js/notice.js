@@ -8,6 +8,14 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '/board/noticeWrite'; // 글쓰기 페이지로 이동
         };
     }
+    // 검색 버튼 이벤트 추가
+    const searchButton = document.getElementById('searchButton');
+    if (searchButton) {
+        searchButton.addEventListener('click', () => {
+            const keyword = document.getElementById('searchInput').value;
+            window.location.href = `/board/notice/search?keyword=${keyword}`;
+        });
+    }
 
     // 공지사항 목록의 각 항목에 클릭 이벤트 추가
     const noticeItems = document.querySelectorAll('.notice-item');
@@ -70,6 +78,40 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('전체 삭제 요청 중 오류가 발생했습니다.');
                 });
             }
+        });
+    }
+// 다중 삭제 버튼 이벤트 추가
+    const deleteSelectedButton = document.getElementById('deleteSelectedButton');
+    if (deleteSelectedButton) {
+        deleteSelectedButton.addEventListener('click', () => {
+            const selectedIds = Array.from(document.querySelectorAll('.notice-checkbox:checked'))
+                .map(checkbox => checkbox.getAttribute('data-id'));
+
+            if (selectedIds.length > 0 && confirm('선택된 공지사항을 삭제하시겠습니까?')) {
+                fetch('/deleteSelectedNotices', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `ids=${selectedIds.join(',')}`
+                }).then(response => {
+                    if (response.ok) {
+                        alert('선택된 공지사항이 삭제되었습니다.');
+                        location.reload();
+                    } else {
+                        alert('선택 삭제에 실패했습니다.');
+                    }
+                }).catch(error => {
+                    console.error('선택 삭제 요청 중 오류 발생:', error);
+                    alert('선택 삭제 요청 중 오류가 발생했습니다.');
+                });
+            }
+        });
+    }
+    // 필터 버튼 이벤트 추가
+    const filterButton = document.getElementById('filterButton');
+    if (filterButton) {
+        filterButton.addEventListener('click', () => {
+            const author = document.getElementById('filterInput').value;
+            window.location.href = `/board/notice/filter?author=${author}`;
         });
     }
 });

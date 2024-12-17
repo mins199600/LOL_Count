@@ -63,7 +63,6 @@ const loadRecommendedDecks = async () => {
             deckCard.onclick = function() {
                 document.getElementById('modalDeckName').textContent = deck.deckName;
                 document.getElementById('modalDeckDescription').textContent = deck.description;
-                document.getElementById('modalItems').innerHTML = ''; // 아이템 초기화
 
                 if (deck.items) {
                     deck.items.forEach(item => {

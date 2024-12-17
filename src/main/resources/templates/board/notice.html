@@ -14,6 +14,11 @@
 </header>
 <main>
     <table>
+        <!-- 검색 필드와 버튼 추가 -->
+        <div>
+            <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+            <button id="searchButton" type="button">검색</button>
+        </div>
         <thead>
         <tr>
             <th></th>
@@ -23,6 +28,12 @@
             <th>조회수</th>
             <th>작성일자</th>
             <button id="deleteAllButton" type="button">삭제</button>
+            <button id="deleteSelectedButton" type="button">선택 삭제</button>
+            <!-- 필터 입력 필드와 버튼 추가 -->
+            <div>
+                <input type="text" id="filterInput" placeholder="작성자 이름 입력">
+                <button id="filterButton" type="button">필터</button>
+            </div>
         </tr>
         </thead>
         <tbody>

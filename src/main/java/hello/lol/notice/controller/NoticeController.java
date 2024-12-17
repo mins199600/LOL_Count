@@ -34,6 +34,15 @@ public class NoticeController {
         return "/board/noticeDetail";
     }
 
+    //검색기능추가
+    @GetMapping("/board/notice/search")
+    public String searchNotice(@RequestParam("keyword") String keyword, Model model) {
+        log.info("공지사항 검색 시작. 검색어: {}", keyword);
+        List<Notice> searchResults = noticeService.searchNotices(keyword);
+        model.addAttribute("noticeList", searchResults);
+        return "/board/notice";
+    }
+
     //글쓰는 화면으로 이동
     @GetMapping("/board/noticeWrite")
     public String noticeWrite(Model model){
@@ -88,6 +97,21 @@ public class NoticeController {
             log.error("공지사항 삭제 실패: ID={}", id);
         }
         return "redirect:/board/notice"; // 삭제 후 목록 페이지로 리다이렉트
+    }
+    // 다중 삭제 API 추가
+    @PostMapping("/deleteSelectedNotices")
+    public String deleteSelectedNotices(@RequestParam("ids") List<Integer> ids) {
+        log.info("선택된 공지사항 삭제 요청: {}", ids);
+        noticeService.deleteSelectedNotices(ids);
+        return "redirect:/board/notice";
+    }
+    // 필터링 API 추가
+    @GetMapping("/board/notice/filter")
+    public String filterNotices(@RequestParam("author") String author, Model model) {
+        log.info("작성자 필터링 시작. 작성자: {}", author);
+        List<Notice> filteredNotices = noticeService.filterNoticesByAuthor(author);
+        model.addAttribute("noticeList", filteredNotices);
+        return "/board/notice";
     }
 }
 

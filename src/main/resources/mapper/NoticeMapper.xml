@@ -12,6 +12,10 @@
         from notice
         where id = #{noticeId}
     </select>
+    <!-- 검색 쿼리 추가 -->
+    <select id="searchNotices" parameterType="string" resultType="hello.lol.notice.vo.Notice">
+        SELECT * FROM notice WHERE title LIKE CONCAT('%', #{keyword}, '%') OR contents LIKE CONCAT('%', #{keyword}, '%') ORDER BY id DESC
+    </select>
     <!--글쓰기-->
     <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
         insert into notice(title, author, contents, views)
@@ -41,4 +45,15 @@
         DELETE FROM notice
         WHERE id = #{id}
     </delete>
+    <!-- 다중 삭제 쿼리 추가 -->
+    <delete id="deleteSelectedNotices" parameterType="list">
+        DELETE FROM notice WHERE id IN
+        <foreach item="id" collection="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <!-- 필터 쿼리 추가 -->
+    <select id="filterNoticesByAuthor" parameterType="string" resultType="hello.lol.notice.vo.Notice">
+        SELECT * FROM notice WHERE author = #{author} ORDER BY id DESC
+    </select>
 </mapper>

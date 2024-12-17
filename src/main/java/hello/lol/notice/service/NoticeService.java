@@ -27,6 +27,12 @@ public class NoticeService {
         log.info("조회된 공지사항 단일조회 데이터 : {}", notice);
         return notice;
     }
+    //검색
+    public List<Notice> searchNotices(String keyword) {
+        List<Notice> searchResults = noticeDao.searchNotices(keyword);
+        log.info("검색 결과: {}", searchResults);
+        return searchResults;
+    }
     //글쓰기
     public void writeNotice(Notice notice) {
         noticeDao.writeNotice(notice);
@@ -65,6 +71,17 @@ public class NoticeService {
             log.error("공지사항 삭제 실패: ID={}", id);
             return false;
         }
+    }
+
+    // 다중 삭제 로직 추가
+    public void deleteSelectedNotices(List<Integer> ids) {
+        int deletedCount = noticeDao.deleteSelectedNotices(ids);
+        log.info("삭제된 공지사항 수: {}", deletedCount);
+    }
+
+    // 필터 로직 추가
+    public List<Notice> filterNoticesByAuthor(String author) {
+        return noticeDao.filterNoticesByAuthor(author);
     }
 
 }
