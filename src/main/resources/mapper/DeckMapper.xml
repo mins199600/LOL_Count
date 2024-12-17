@@ -5,13 +5,15 @@
     <select id="deckGuide" resultType="hello.lol.deck.guide.repository.DeckDto">
         SELECT d.decks_id                                   AS deckId,
                d.decks_name                                 AS deckName,
+               d.description                                AS description,
+               c.crafted_image_url                                AS deckImage,
                GROUP_CONCAT(c.champion_name SEPARATOR ', ') AS championNames
         FROM decks d
                  LEFT JOIN
              deck_champions_mapping dcm ON d.decks_id = dcm.deck_id
                  LEFT JOIN
              champions_list c ON dcm.champion_id = c.champion_id
-        GROUP BY d.decks_id, d.decks_name
+        GROUP BY d.decks_id, d.decks_name, d.description
         ORDER BY d.decks_id;
     </select>
 

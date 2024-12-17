@@ -5,6 +5,24 @@ public class DeckDto {
     private int deckId;
     private String deckName;
     private String championNames;
+    private String description;
+    private String imageUrl;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public int getDeckId() {
         return deckId;

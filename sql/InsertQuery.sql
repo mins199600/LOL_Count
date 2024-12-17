@@ -15,7 +15,6 @@ VALUES ('Darius', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Darius.jp
        ('Powder', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Powder.jpg');
 -- 1코스트 끝
 
-
 -- 2코스트 시작
 INSERT INTO champions_list (champion_name, image_url)
 VALUES ('Renata', 'https://cdn.dak.gg/tft/images2/sets/set13/portraits/Renata.jpg'),
@@ -320,6 +319,15 @@ VALUES (24, 26), -- 갱플랭크
        (24, 33), -- 스웨인
        (24, 58), -- 앨리스
        (24, 69); -- 제이스
+
+-- 덱 설명
+UPDATE decks
+SET description = '고유: 형태전환자의 능력치 및 스킬이 위치(전방 또는 후방 가로 2열)에 따라 변경됩니다.
+전방 형태전환자는 내구력을 얻습니다. 후방 형태전환자는 피해 증폭을 얻습니다.
+(1) 내구력 15% 또는 피해 증폭 20%
+(2) 내구력 30% 또는 피해 증폭 40%'
+WHERE decks_name = '형태전환자';
+
 
 -- 재료아이템
 INSERT INTO material_item (material_name, image_url)

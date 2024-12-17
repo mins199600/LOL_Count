@@ -6,6 +6,8 @@ CREATE TABLE decks
     image_url  VARCHAR(255)  NULL -- 외부 이미지 링크 넣는 곳
 );
 
+-- 2. 덱 설명 컬럼 추가
+ALTER TABLE decks ADD COLUMN description TEXT;
 
 -- 2. 챔피언 테이블 생성
 CREATE TABLE champions_list
