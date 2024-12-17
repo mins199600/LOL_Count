@@ -2,20 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="hello.lol.notice.dao.NoticeDao">
+
     <!--전체조회-->
-    <select id="NoticeList" resultType="map">
-        select * from notice;
+    <select id="NoticeList" resultType="hello.lol.notice.vo.Notice">
+        SELECT id,
+               title,
+               contents,
+               author,
+               views,
+               create_date,
+               modified_date
+        FROM notice
+        order by create_date desc;
     </select>
+
     <!--단일조회-->
     <select id="findNoticeById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
         select *
         from notice
         where id = #{noticeId}
     </select>
-    <!-- 검색 쿼리 추가 -->
-    <select id="searchNotices" parameterType="string" resultType="hello.lol.notice.vo.Notice">
-        SELECT * FROM notice WHERE title LIKE CONCAT('%', #{keyword}, '%') OR contents LIKE CONCAT('%', #{keyword}, '%') ORDER BY id DESC
-    </select>
+
     <!--글쓰기-->
     <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
         insert into notice(title, author, contents, views)
@@ -46,14 +53,11 @@
         WHERE id = #{id}
     </delete>
     <!-- 다중 삭제 쿼리 추가 -->
-    <delete id="deleteSelectedNotices" parameterType="list">
+    <delete id="deleteSelectedNotices" parameterType="java.util.List">
         DELETE FROM notice WHERE id IN
         <foreach item="id" collection="list" open="(" separator="," close=")">
             #{id}
         </foreach>
     </delete>
-    <!-- 필터 쿼리 추가 -->
-    <select id="filterNoticesByAuthor" parameterType="string" resultType="hello.lol.notice.vo.Notice">
-        SELECT * FROM notice WHERE author = #{author} ORDER BY id DESC
-    </select>
+
 </mapper>

@@ -13,4 +13,6 @@ public class Notice {
     private int views;
     private LocalDate createDate;
     private LocalDateTime modifiedDate;
+    private String searchKeyword;
+    private String searchType;
 }

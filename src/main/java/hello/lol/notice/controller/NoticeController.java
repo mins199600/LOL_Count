@@ -18,9 +18,18 @@ public class NoticeController {
 
     //조회
     @GetMapping("/board/notice")
-    public String getNoticeBoard(Model model) {
-        log.info("게시판 전체조회 시작");
-        List<Notice> noticeList = noticeService.noticeList();
+    public String getNoticeBoard(@RequestParam(value = "keyword", required = false) String keyword,
+                                 Model model) {
+        log.info("게시판 조회 시작 - 검색어: {}", keyword);
+
+        List<Notice> noticeList;
+        if (keyword != null && !keyword.isEmpty()) {
+            // 검색어가 있는 경우
+            noticeList = noticeService.searchNotices(keyword);
+        } else {
+            // 검색어가 없는 경우 전체 목록 조회
+            noticeList = noticeService.noticeList();
+        }
         model.addAttribute("noticeList", noticeList);
         return "/board/notice";
     }
@@ -34,15 +43,6 @@ public class NoticeController {
         return "/board/noticeDetail";
     }
 
-    //검색기능추가
-    @GetMapping("/board/notice/search")
-    public String searchNotice(@RequestParam("keyword") String keyword, Model model) {
-        log.info("공지사항 검색 시작. 검색어: {}", keyword);
-        List<Notice> searchResults = noticeService.searchNotices(keyword);
-        model.addAttribute("noticeList", searchResults);
-        return "/board/notice";
-    }
-
     //글쓰는 화면으로 이동
     @GetMapping("/board/noticeWrite")
     public String noticeWrite(Model model){
@@ -51,8 +51,8 @@ public class NoticeController {
     }
 
     //글 저장
-    @PostMapping("/notices")
-    public String noticeWrite(@ModelAttribute Notice notice) {
+    @PostMapping("/board/noticeWrite")
+    public String saveNotice(@ModelAttribute Notice notice) {
         log.info("저장된 글 내용: {}", notice);
         noticeService.writeNotice(notice);
         return "redirect:/board/notice";
@@ -105,14 +105,7 @@ public class NoticeController {
         noticeService.deleteSelectedNotices(ids);
         return "redirect:/board/notice";
     }
-    // 필터링 API 추가
-    @GetMapping("/board/notice/filter")
-    public String filterNotices(@RequestParam("author") String author, Model model) {
-        log.info("작성자 필터링 시작. 작성자: {}", author);
-        List<Notice> filteredNotices = noticeService.filterNoticesByAuthor(author);
-        model.addAttribute("noticeList", filteredNotices);
-        return "/board/notice";
-    }
+
 }
 
 
