@@ -6,14 +6,14 @@ public class DeckDto {
     private String deckName;
     private String championNames;
     private String description;
-    private String imageUrl;
+    private String craftedId;
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getCraftedId() {
+        return craftedId;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setCraftedId(String craftedId) {
+        this.craftedId = craftedId;
     }
 
     public String getDescription() {
