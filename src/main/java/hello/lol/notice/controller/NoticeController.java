@@ -62,13 +62,6 @@ public class NoticeController {
         noticeService.updateNotice(notice);
         return "redirect:/board/notice";
     }
-    //삭제하기
-/*    @GetMapping("/noticeDelete/{id}")
-    public String noticeDelete(@PathVariable("id") int id) {
-        noticeService.deleteNotice(id);
-        return "redirect:/board/notice";
-    }*/
 }
-
 
 

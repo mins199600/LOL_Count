@@ -2,27 +2,30 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>추천 아이템</title>
+    <title>아이템</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/css/items.css}">
 </head>
 <body>
     <header class="header">
-        <nav class="nav-container">
-            <div class="head">아이템</div>
-            <ul class="nav-menu">
-                <li><a href="/items/newItems">신규아이템</a></li>
-                <li><a href="/items/bestItem">추천아이템</a></li>
-                <li><a href="/items/counterItem">카운터아이템</a></li>
-            </ul>
+        <nav class="itemContainer">
+            <div class="titleHead">아이템 목록</div>
         </nav>
     </header>
-    <div class="itemList">
 
+    <div class="itemList">
+        <h3 class="item" th:onclick="getAttackItem()">공격력 아이템</h3>
+        <h3 class="item" th:onclick="getMagicItem()">주문력 아이템</h3>
+        <h3 class="item" th:onclick="getTankItem()">탱커 아이템</h3>
+    </div>
+
+    <div id="queryDisplay" class="query-display">
+        <!--아이템을 표시할 부분-->
     </div>
 
 
     <footer class="footer">
-        <p>&copy; 2024 TFT 가이드. All rights reserved.</p>
+        <p>&copy; 2024 Are you ready to fight? ●Always-Ready●</p>
     </footer>
     <script th:src="@{/js/items.js}"></script>
 </body>

@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             password.focus();
             return;
         }
-         // 로그인 처리
-        // 여기에 로그인 로직을 추가하세요.
         alert('로그인이 완료되었습니다.');
         window.location.href="/main";
     });

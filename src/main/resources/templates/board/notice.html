@@ -14,22 +14,31 @@
 </header>
 <main>
     <table>
+        <form action="/board/notice" th:action="@{/board/notice}" method="get">
+            <input class="search-text" type="text" name="keyword" placeholder="검색어를 입력하세요">
+            <button type="submit">검색</button>
+        </form>
         <thead>
         <tr>
-            <th>번호</th>
+            <th></th>
+            <th>게시물번호</th>
             <th>제목</th>
             <th>작성자</th>
             <th>조회수</th>
             <th>작성일자</th>
+            <button id="deleteAllButton" type="button">삭제</button>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="prod : ${noticeList}" th:onclick="|location.href='/noticeDetail?id=${prod.id}'|">
+        <tr class="notice-item" th:each="prod : ${noticeList}" th:attr="data-id=${prod.id}">
+            <td>
+                <input type="checkbox" class="notice-checkbox" th:attr="data-id=${prod.id}">
+            </td>
             <td th:text="${prod.id}">1</td>
             <td th:text="${prod.title}">제목</td>
             <td th:text="${prod.author}">작성자</td>
             <td th:text="${prod.views}">조회수</td>
-            <td th:text="${prod.create_date}">등록일</td>
+            <td th:text="${prod.createDate != null ? #dates.format(prod.create_date, 'yyyy-MM-dd') : 'N/A'}">등록일</td>
         </tr>
         </tbody>
         <button type="button" class="noticeWriteButton" id="noticeWriteButton" name="noticeWriteButton">
@@ -38,7 +47,7 @@
     </table>
 </main>
 <footer class="footer">
-    <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>
+    <p>&copy; 2024 Are you ready to fight? ●Always-Ready●</p>
 </footer>
 <script th:src="@{/js/notice.js}"></script>
 </body>

@@ -7,43 +7,20 @@
     <select id="NoticeList" resultType="map">
         select * from notice;
     </select>
-
     <!--단일조회-->
     <select id="findNoticeById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
-        select id,
-               title,
-               contents,
-               author,
-               create_date,
-               modified_date
+        select *
         from notice
         where id = #{noticeId}
     </select>
-
     <!--글쓰기-->
     <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
-        insert into notice(title,
-                           author,
-                           contents,
-                           views,
-                           create_date
-                        )
-        values (#{title},
-                #{author},
-                #{contents},
-                0
-            ,now()
-               );
+        insert into notice(title, author, contents, views)
+        values (#{title}, #{author}, #{contents}, 0);
     </insert>
-
     <!-- 공지사항 조회 -->
     <select id="findById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
-        SELECT id,
-               title,
-               contents,
-               author,
-               create_date,
-               modified_date
+        SELECT id, title, contents, author, create_date, modified_date
         FROM notice
         WHERE id = #{id}
     </select>
@@ -57,9 +34,4 @@
             modified_date = NOW()
         WHERE id = #{id}
     </update>
-
-    <!--삭제기능-->
-    <delete id="delete" parameterType="int">
-        delete from notice where id = #{id}
-    </delete>
 </mapper>
