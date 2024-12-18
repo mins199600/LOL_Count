@@ -29,14 +29,14 @@ public class NoticeService {
         log.info("조회된 공지사항 단일조회 데이터 : {}", notice);
         return notice;
     }
-   //검색기능
-   public List<Notice> searchNotices(String keyword) {
-       List<Notice> results = noticeDao.searchNotices(keyword);
-       if (results == null) {
-           results = new ArrayList<>(); // 비어 있는 리스트 반환
-       }
-       return results;
-   }
+    //검색기능
+    public List<Notice> searchNotices(String keyword) {
+        List<Notice> results = noticeDao.searchNotices(keyword);
+        if (results == null) {
+            results = new ArrayList<>(); // 비어 있는 리스트 반환
+        }
+        return results;
+    }
     //글쓰기
     public void writeNotice(Notice notice) {
         noticeDao.writeNotice(notice);
@@ -84,8 +84,4 @@ public class NoticeService {
     }
 
 
-/*    public void deleteNotice(int id) {
-        noticeDao.delete(id);
-    }*/
 }
-

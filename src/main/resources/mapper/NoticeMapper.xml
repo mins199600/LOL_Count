@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
 <mapper namespace="hello.lol.notice.dao.NoticeDao">
+
     <!--전체조회-->
-    <select id="NoticeList" resultType="map">
-        select * from notice;
+    <select id="NoticeList" resultType="hello.lol.notice.vo.Notice">
+        SELECT id, title, contents, author, views, create_date, modified_date
+        FROM notice
+        ORDER BY create_date DESC;
     </select>
+
     <!--단일조회-->
     <select id="findNoticeById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
         select *
         from notice
         where id = #{noticeId}
     </select>
+
     <!--글쓰기-->
     <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
-        insert into notice(title, author, contents, views)
-        values (#{title}, #{author}, #{contents}, 0);
+        insert into notice(title, author, contents, create_date)
+        values (#{title}, #{author}, #{contents}, now());
     </insert>
     <!-- 공지사항 조회 -->
     <select id="findById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
@@ -24,7 +28,6 @@
         FROM notice
         WHERE id = #{id}
     </select>
-
     <!-- 공지사항 수정 -->
     <update id="update" parameterType="hello.lol.notice.vo.Notice">
         UPDATE notice
@@ -34,4 +37,21 @@
             modified_date = NOW()
         WHERE id = #{id}
     </update>
+    <!--공지사항 전체삭제-->
+    <delete id="deleteAllNotices">
+        DELETE FROM notice
+    </delete>
+    <!-- 공지사항 단일삭제 -->
+    <delete id="deleteNotice" parameterType="int">
+        DELETE FROM notice
+        WHERE id = #{id}
+    </delete>
+    <!-- 다중 삭제 쿼리 추가 -->
+    <delete id="deleteSelectedNotices" parameterType="java.util.List">
+        DELETE FROM notice WHERE id IN
+        <foreach item="id" collection="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
 </mapper>
