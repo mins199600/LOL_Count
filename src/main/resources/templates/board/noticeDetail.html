@@ -7,13 +7,15 @@
     <link rel="stylesheet" th:href="@{/css/notice.css}">
 </head>
 <body>
+
     <header class="header">
         <nav class="notice-head">
             <div class="logo">공지사항 상세보기</div>
         </nav>
     </header>
+
     <main>
-        
+
         <h1>공지사항 상세보기</h1>
         <table border="1">
             <tr>
@@ -49,9 +51,10 @@
         <!-- 뒤로가기 버튼 -->
         <button type="button" onclick="history.back()">뒤로가기</button>
         <!--수정하기 버튼-->
-        <form th:action="@{/noticeUpdate/{id}(id=${notice.id})}" method="get">
+        <form th:action="@{/noticeUpdate/{id}(id=${notice.id})}" method="post">
             <button type="submit">수정하기</button>
         </form>
+
     </main>
     <footer class="footer">
         <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>

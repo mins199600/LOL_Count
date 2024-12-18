@@ -44,5 +44,8 @@ public class NoticeService {
         log.info("공지사항 수정 완료: {}", notice);
     }
 
+/*    public void deleteNotice(int id) {
+        noticeDao.delete(id);
+    }*/
 }
 

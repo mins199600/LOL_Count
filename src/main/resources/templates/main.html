@@ -38,9 +38,9 @@
             <div th:each="deck : ${decks}" class="deck-card">
                 <h3 th:text="${deck.name}">덱 이름</h3>
                 <div class="deck-traits">
-                          <span th:each="trait : ${deck.traits}"
-                                th:text="${trait}"
-                                class="trait-tag">특성</span>
+                          <span th:each="trait : ${deck.traits}" th:text="${trait}" class="trait-tag">
+                              특성
+                          </span>
                 </div>
                 <div class="deck-champions">
                     <div th:each="champion : ${deck.champions}" class="deck-champion">

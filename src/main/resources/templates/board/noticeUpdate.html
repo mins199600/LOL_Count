@@ -12,9 +12,10 @@
       <div class="logo">공지사항 글쓰기</div>
     </nav>
   </header>
+
     <main class="noticeWriteBody">
       <form  th:action="@{/noticeUpdate/{id}(id=${notice.id})}" method="post">
-
+        <input type="hidden" name="method" value="put" />
         <label for="title">제목:</label>
         <input type="text" id="title" name="title" th:field="*{notice.title}" />
 
@@ -27,6 +28,7 @@
         <button type="submit">수정하기</button>
       </form>
     </main>
+
   <footer class="footer">
     <p>&copy; 2024 ●All-Rights●. All rights reserved.</p>
   </footer>
