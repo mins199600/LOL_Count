@@ -5,29 +5,40 @@
 
     <!--전체조회-->
     <select id="NoticeList" resultType="hello.lol.notice.vo.Notice">
-        SELECT id, title, contents, author, views, create_date, modified_date
+        SELECT id,
+               title,
+               contents,
+               author,
+               views,
+               create_date AS createDate,
+               modified_date AS modifiedDate
         FROM notice
         ORDER BY create_date DESC;
     </select>
 
     <!--단일조회-->
     <select id="findNoticeById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
-        select *
-        from notice
-        where id = #{noticeId}
+        SELECT id,
+               title,
+               contents,
+               author,
+               views,
+               create_date AS createDate,
+               modified_date AS modifiedDate
+        FROM notice
+        where id = #{id}
     </select>
 
     <!--글쓰기-->
     <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
-        insert into notice(title, author, contents, create_date)
-        values (#{title}, #{author}, #{contents}, now());
+        INSERT INTO notice (title,
+                            author,
+                            contents,
+                            create_date
+                            )
+        VALUES (#{title}, #{author}, #{contents}, NOW());
     </insert>
-    <!-- 공지사항 조회 -->
-    <select id="findById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
-        SELECT id, title, contents, author, create_date, modified_date
-        FROM notice
-        WHERE id = #{id}
-    </select>
+
     <!-- 공지사항 수정 -->
     <update id="update" parameterType="hello.lol.notice.vo.Notice">
         UPDATE notice

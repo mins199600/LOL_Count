@@ -43,11 +43,6 @@ public class NoticeService {
         log.info("글쓰기 성공");
     }
 
-    // 공지사항 조회
-    public Notice getNoticeById(int id) {
-        return noticeDao.findById(id);
-    }
-
     // 공지사항 수정
     public void updateNotice(Notice notice) {
         noticeDao.update(notice); // DAO 호출

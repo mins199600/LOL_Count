@@ -7,54 +7,28 @@
     <link rel="stylesheet" th:href="@{/css/notice.css}">
 </head>
 <body>
-
     <header class="header">
         <nav class="notice-head">
             <div class="logo">공지사항 상세보기</div>
         </nav>
     </header>
-
     <main>
-
         <h1>공지사항 상세보기</h1>
-        <table border="1">
-            <tr>
-                <th>번호</th>
-                <td th:text="${notice.id}">1</td>
-            </tr>
-            <tr>
-                <th>제목</th>
-                <td th:text="${notice.title}">공지사항 제목</td>
-            </tr>
-            <tr>
-                <th>작성자</th>
-                <td th:text="${notice.author}">작성자</td>
-            </tr>
-            <tr>
-                <th>내용</th>
-                <td th:text="${notice.contents}">공지사항 내용</td>
-            </tr>
-            <tr>
-                <th>조회수</th>
-                <td th:text="${notice.views}">조회수</td>
-            </tr>
-            <tr>
-                <th>작성일자</th>
-                <td th:text="${notice.createDate}">2024-12-05</td>
-            </tr>
-            <tr>
-                <th>수정일자</th>
-                <td th:text="${notice.modifiedDate}">2024-12-06</td>
-            </tr>
-        </table>
-
-        <!-- 뒤로가기 버튼 -->
-        <button type="button" onclick="history.back()">뒤로가기</button>
-        <!--수정하기 버튼-->
         <form th:action="@{/noticeUpdate/{id}(id=${notice.id})}" method="post">
-            <button type="submit">수정하기</button>
-        </form>
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title" th:value="${notice.title}" required />
 
+            <label for="contents">내용:</label>
+            <textarea id="contents" name="contents" required th:text="${notice.contents}"></textarea>
+
+            <label for="author">작성자:</label>
+            <input type="text" id="author" name="author" th:value="${notice.author}" required />
+
+            <div class="button-container">
+                <button type="submit">수정하기</button>
+                <button type="button" onclick="history.back()">뒤로가기</button>
+            </div>
+        </form>
     </main>
     <footer class="footer">
         <p>&copy; 2024 Are you ready to fight? ●Always-Ready●</p>

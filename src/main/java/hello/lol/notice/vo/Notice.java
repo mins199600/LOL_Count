@@ -3,7 +3,7 @@ package hello.lol.notice.vo;
 import lombok.Data;
 
 import java.sql.Date;
-
+import java.time.LocalDate;
 
 
 @Data
@@ -13,7 +13,6 @@ public class Notice {
     private String author;
     private String contents;
     private int views;
-    private Date createDate;
-    private Date modifiedDate;
-
+    private LocalDate createDate;
+    private LocalDate modifiedDate;
 }

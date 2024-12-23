@@ -13,11 +13,13 @@
     </nav>
 </header>
 <main>
-    <table>
-        <form action="/board/notice" th:action="@{/board/notice}" method="get">
+    <div class="search-container">
+        <form action="/board/notice" th:action="@{/board/notice}" method="get" style="flex: 1; display: flex;">
             <input class="search-text" type="text" name="keyword" placeholder="검색어를 입력하세요">
             <button type="submit">검색</button>
         </form>
+    </div>
+    <table>
         <thead>
         <tr>
             <th></th>
@@ -27,7 +29,8 @@
             <th>내용</th>
             <th>조회수</th>
             <th>작성일자</th>
-            <button id="deleteAllButton" type="button">삭제</button>
+            <th>수정일자</th>
+
         </tr>
         </thead>
         <tbody>
@@ -41,12 +44,12 @@
             <td th:text="${prod.contents}">내용</td>
             <td th:text="${prod.views}">조회수</td>
             <td th:text="${prod.createDate}">작성일자</td>
+            <td th:text="${prod.modifiedDate}">작성일자</td>
         </tr>
         </tbody>
-        <button type="button" class="noticeWriteButton" id="noticeWriteButton" name="noticeWriteButton">
-            글쓰기
-        </button>
     </table>
+    <button type="button" class="noticeWriteButton" id="noticeWriteButton" name="noticeWriteButton">글쓰기</button>
+    <button id="deleteAllButton" type="button">삭제</button>
 </main>
 <footer class="footer">
     <p>&copy; 2024 Are you ready to fight? ●Always-Ready●</p>

@@ -14,9 +14,8 @@ public interface NoticeDao {
     Notice findNoticeById(int noticeId);
     //글쓰기
     void writeNotice(Notice notice);
-    //공지사항 조회
-    Notice findById(int id);
-    //공지사항 저장
+
+    //공지사항 수정하기
     void update(Notice notice);
     //전체삭제
     int deleteAllNotices();

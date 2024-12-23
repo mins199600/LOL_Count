@@ -65,20 +65,16 @@ public class NoticeController {
         return"redirect:/notice";
     }
 
-    //수정하기
-    @GetMapping("/noticeUpdate/{id}")
-    public String noticeUpdate(@PathVariable("id") int id, Model model) {
-        log.info("수정할 게시판 내용: {}", model);
-        Notice notice = noticeService.getNoticeById(id);
-        model.addAttribute("notice", notice);
-        return "/board/noticeUpdate";
-    }
 
     //수정데이터 저장
     @PostMapping("/noticeUpdate/{id}")
     public String noticeUpdate(@PathVariable("id") int id, @ModelAttribute Notice notice) {
+        log.info("수정 요청 ID: {}", id);
+        log.info("수정할 데이터: {}", notice);
+
         notice.setId(id);
         noticeService.updateNotice(notice);
+
         return "redirect:/board/notice";
     }
 
