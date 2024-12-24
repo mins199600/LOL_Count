@@ -27,48 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = `/noticeDetail?id=${noticeId}`;
         };
     });
-
-    // 공지사항 삭제를 위한 체크박스 이벤트 추가
-    const checkboxes = document.querySelectorAll('.notice-checkbox'); // 체크박스 선택
-    checkboxes.forEach((checkbox) => {
-        checkbox.addEventListener('click', (event) => {
-            event.stopPropagation(); // 클릭 이벤트가 부모로 전파되는 것을 막음
-
-            const noticeId = checkbox.getAttribute('data-id'); // 체크박스의 data-id 가져오기
-            if (confirm('정말 삭제하시겠습니까?')) {
-                // POST 요청 전송 (삭제 요청)
-                fetch('/deleteNotice', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: `id=${noticeId}` // POST 요청에 데이터 전달
-                }).then((response) => {
-                    if (response.ok) {
-                        alert('삭제되었습니다.');
-                        location.reload(); // 페이지 새로고침
-                    } else {
-                        alert('삭제에 실패했습니다.');
-                    }
-                }).catch((error) => {
-                    console.error('삭제 요청 중 오류 발생:', error);
-                    alert('삭제 요청 중 오류가 발생했습니다.');
-                });
-            }
-        });
-    });
-
-    // 전체 삭제 버튼 클릭 이벤트
+    //삭제 버튼 클릭 이벤트
+    var check_arr = []; //checkbox 클릭시 배열값을 담는 역활
     const deleteAllButton = document.getElementById('deleteAllButton');
     if (deleteAllButton) {
         deleteAllButton.addEventListener('click', () => {
+            var ea = document.getElementsByClassName("notice-checkbox");
+            var cks = 0
+            var counts = 0;
+            while(cks < ea.length){
+                if(ea[cks].checked == true){
+                    check_arr[counts] = ea[cks].getAttribute("dataId");
+                    counts++;
+                }
+                cks++;
+            }
+            console.log(check_arr);
+
             if (confirm('정말 모든 공지사항을 삭제하시겠습니까?')) {
-                // POST 요청 전송 (전체 삭제)
-                fetch('/deleteAllNotices', {
+                // POST 요청 전송 (개별삭제)
+                fetch('/deleteAllNotices?checkBoxData', {
                     method: 'POST',
+                    body:JSON.stringify(check_arr)
                 }).then((response) => {
                     if (response.ok) {
-                        alert('모든 공지사항이 삭제되었습니다.');
+                        alert('삭제되었습니다.');
                         location.reload(); // 페이지 새로고침
                     } else {
                         alert('전체 삭제에 실패했습니다.');
@@ -76,36 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }).catch((error) => {
                     console.error('전체 삭제 요청 중 오류 발생:', error);
                     alert('전체 삭제 요청 중 오류가 발생했습니다.');
-                });
+                })
             }
         });
     }
-// 다중 삭제 버튼 이벤트 추가
-    const deleteSelectedButton = document.getElementById('deleteSelectedButton');
-    if (deleteSelectedButton) {
-        deleteSelectedButton.addEventListener('click', () => {
-            const selectedIds = Array.from(document.querySelectorAll('.notice-checkbox:checked'))
-                .map(checkbox => checkbox.getAttribute('data-id'));
 
-            if (selectedIds.length > 0 && confirm('선택된 공지사항을 삭제하시겠습니까?')) {
-                fetch('/deleteSelectedNotices', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: `ids=${selectedIds.join(',')}`
-                }).then(response => {
-                    if (response.ok) {
-                        alert('선택된 공지사항이 삭제되었습니다.');
-                        location.reload();
-                    } else {
-                        alert('선택 삭제에 실패했습니다.');
-                    }
-                }).catch(error => {
-                    console.error('선택 삭제 요청 중 오류 발생:', error);
-                    alert('선택 삭제 요청 중 오류가 발생했습니다.');
-                });
-            }
-        });
-    }
     // 필터 버튼 이벤트 추가
     const filterButton = document.getElementById('filterButton');
     if (filterButton) {

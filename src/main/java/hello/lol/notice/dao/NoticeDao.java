@@ -17,11 +17,7 @@ public interface NoticeDao {
     //공지사항 수정하기
     void update(Notice notice);
     //전체삭제
-    int deleteAllNotices();
-    //단일삭제
-    int deleteNotice(int id);
-    // 여러개 단일삭제
-    int deleteSelectedNotices(List<Integer> ids);
+    int deleteAllNotices(String dataId);
     //검색기능
     List<Notice> searchNotices(@Param("keyword") String keyword);
 
