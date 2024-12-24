@@ -30,7 +30,7 @@
     </select>
 
     <!--글쓰기-->
-    <insert id="writeNotice" parameterType="hello.lol.notice.vo.Notice">
+    <insert id="setWriteNotice" parameterType="hello.lol.notice.vo.Notice">
         INSERT INTO notice (title,
                             author,
                             contents,
@@ -48,15 +48,18 @@
             modified_date = NOW()
         WHERE id = #{id}
     </update>
+
     <!--공지사항 전체삭제-->
     <delete id="deleteAllNotices">
         DELETE FROM notice
     </delete>
+
     <!-- 공지사항 단일삭제 -->
     <delete id="deleteNotice" parameterType="int">
         DELETE FROM notice
         WHERE id = #{id}
     </delete>
+
     <!-- 다중 삭제 쿼리 추가 -->
     <delete id="deleteSelectedNotices" parameterType="java.util.List">
         DELETE FROM notice WHERE id IN
@@ -64,5 +67,24 @@
             #{id}
         </foreach>
     </delete>
+
+    <!--검색기능-->
+    <select id="searchNotices" resultType="hello.lol.notice.vo.Notice">
+        select id,
+               title,
+               contents,
+               author,
+               views,
+               create_date AS createDate,
+               modified_date AS modifiedDate
+
+        from notice
+        where 1=1
+        <if test="keyword != null and keyword != ''">
+            AND (title LIKE CONCAT('%', #{keyword}, '%')
+            OR contents LIKE CONCAT('%', #{keyword}, '%')
+            OR author LIKE CONCAT('%', #{keyword}, '%'))
+        </if>
+    </select>
 
 </mapper>

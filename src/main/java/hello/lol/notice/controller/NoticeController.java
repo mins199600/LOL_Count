@@ -7,7 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -18,20 +21,18 @@ public class NoticeController {
 
     //조회
     @GetMapping("/board/notice")
-    public String getNoticeBoard(@RequestParam(value = "keyword", required = false) String keyword,
-                                 Model model) {
-        log.info("게시판 조회 시작 - 검색어: {}", keyword);
-
-        List<Notice> noticeList;
-        if (keyword != null && !keyword.isEmpty()) {
-            // 검색어가 있는 경우
-            noticeList = noticeService.searchNotices(keyword);
+    public String searchNotices(@RequestParam(value = "keyword", required = false) String keyword, Model model) {
+            log.info("게시판 조회 시작 - 검색어: {}", keyword);
+        List<Notice> notice;
+        if (keyword == null || keyword.trim().isEmpty()) {
+            notice = noticeService.noticeList(); // 전체 조회
         } else {
-            // 검색어가 없는 경우 전체 목록 조회
-            noticeList = noticeService.noticeList();
+            notice = noticeService.searchNotices(keyword); // 키워드 검색
         }
-        model.addAttribute("noticeList", noticeList);
-        return "/board/notice";
+        model.addAttribute("notices", notice != null ? notice : new ArrayList<>());
+        model.addAttribute("keyword", keyword != null ? keyword : "");
+
+        return "/board/notice"; // Thymeleaf 템플릿 반환
     }
 
     //단일조회
@@ -61,8 +62,8 @@ public class NoticeController {
         notice.setAuthor(author);
         notice.setContents(contents);
 
-        noticeService.writeNotice(notice);
-        return"redirect:/notice";
+        noticeService.setWriteNotice(notice);
+        return"redirect:/board/notice";
     }
 
 
@@ -103,7 +104,7 @@ public class NoticeController {
     }
     // 다중 삭제 API 추가
     @PostMapping("/deleteSelectedNotices")
-    public String deleteSelectedNotices(@RequestParam("ids") List<Integer> ids) {
+    public String deleteSelectedNotices(@RequestParam("ids[]") List<Integer> ids) {
         log.info("선택된 공지사항 삭제 요청: {}", ids);
         noticeService.deleteSelectedNotices(ids);
         return "redirect:/board/notice";

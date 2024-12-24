@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (searchButton) {
         searchButton.addEventListener('click', () => {
             const keyword = document.getElementById('searchInput').value;
-            window.location.href = `/board/notice/search?keyword=${keyword}`;
+            window.location.href = `/board/notice?keyword=${encodeURIComponent(keyword)}`;
         });
     }
 

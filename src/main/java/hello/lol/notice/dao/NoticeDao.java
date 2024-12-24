@@ -13,15 +13,14 @@ public interface NoticeDao {
     //단일조회
     Notice findNoticeById(int noticeId);
     //글쓰기
-    void writeNotice(Notice notice);
-
+    void setWriteNotice(Notice notice);
     //공지사항 수정하기
     void update(Notice notice);
     //전체삭제
     int deleteAllNotices();
     //단일삭제
     int deleteNotice(int id);
-    // 다중 삭제 메서드 추가
+    // 여러개 단일삭제
     int deleteSelectedNotices(List<Integer> ids);
     //검색기능
     List<Notice> searchNotices(@Param("keyword") String keyword);

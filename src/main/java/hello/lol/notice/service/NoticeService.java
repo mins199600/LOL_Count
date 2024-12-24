@@ -33,13 +33,13 @@ public class NoticeService {
     public List<Notice> searchNotices(String keyword) {
         List<Notice> results = noticeDao.searchNotices(keyword);
         if (results == null) {
-            results = new ArrayList<>(); // 비어 있는 리스트 반환
+            results = new ArrayList<>();
         }
         return results;
     }
     //글쓰기
-    public void writeNotice(Notice notice) {
-        noticeDao.writeNotice(notice);
+    public void setWriteNotice(Notice notice) {
+        noticeDao.setWriteNotice(notice);
         log.info("글쓰기 성공");
     }
 

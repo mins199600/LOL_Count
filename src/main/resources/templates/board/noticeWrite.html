@@ -13,7 +13,7 @@
         </nav>
     </header>
         <main class="noticeWriteBody">
-            <form th:action="@{/notices}" method="post" th:object="${notice}">
+            <form th:action="@{/board/noticeWrite}" method="post" th:object="${notice}">
                 <div>
                     <label>제목:</label>
                     <input type="text" id="title" name="title" th:field="*{title}" required>

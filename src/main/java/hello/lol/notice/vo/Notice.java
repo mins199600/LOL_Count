@@ -1,8 +1,6 @@
 package hello.lol.notice.vo;
 
 import lombok.Data;
-
-import java.sql.Date;
 import java.time.LocalDate;
 
 
