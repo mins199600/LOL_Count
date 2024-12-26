@@ -25,7 +25,7 @@ public class NoticeService {
     }
 
     //단일조회
-    public Notice getNotice(int noticeId) {
+    public Notice getNotice(String noticeId) {
         Notice notice = noticeDao.findNoticeById(noticeId);
         log.info("조회된 공지사항 단일조회 데이터 : {}", notice);
         return notice;
@@ -49,17 +49,15 @@ public class NoticeService {
         noticeDao.update(notice); // DAO 호출
         log.info("공지사항 수정 완료: {}", notice);
     }
-    //전체 삭제
-    public boolean deleteAllNotices(@RequestParam("dataId") String dataId) {
-        int result = noticeDao.deleteAllNotices(dataId); // DAO 호출
-        if (result > 0) {
-            log.info("모든 공지사항 삭제 완료");
-            return true;
-        } else {
-            log.error("모든 공지사항 삭제 실패");
-            return false;
-        }
+
+    //공지사항 전체 삭제
+    public void deleteAllNotices() {
+        noticeDao.deleteAll();
     }
 
+    //공지사항 개별 삭제
+    public void deleteNoticesByIds(List<String> ids) {
+        noticeDao.deleteByIds(ids);
+    }
 
 }

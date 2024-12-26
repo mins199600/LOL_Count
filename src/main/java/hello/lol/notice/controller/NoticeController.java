@@ -4,11 +4,14 @@ import hello.lol.notice.service.NoticeService;
 import hello.lol.notice.vo.Notice;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -35,7 +38,7 @@ public class NoticeController {
 
     //단일조회
     @GetMapping("/noticeDetail")
-    public String noticeOneList(@RequestParam("id") int noticeId, Model model) {
+    public String noticeOneList(@RequestParam("id") String noticeId, Model model) {
         log.info("게시판 단일조회 시작. 게시판 id: {}", noticeId);
         Notice notice = noticeService.getNotice(noticeId);
         model.addAttribute("notice", notice);
@@ -63,28 +66,39 @@ public class NoticeController {
         return "redirect:/board/notice";
     }
 
-
     //수정데이터 저장
     @PostMapping("/noticeUpdate/{id}")
-    public String noticeUpdate(@PathVariable("id") int id, @ModelAttribute Notice notice) {
+    public String noticeUpdate(@PathVariable("id") String id, @ModelAttribute Notice notice) {
         log.info("수정 요청 ID: {}", id);
         log.info("수정할 데이터: {}", notice);
-
         notice.setId(id);
         noticeService.updateNotice(notice);
-
         return "redirect:/board/notice";
     }
 
     // 삭제
-    @PostMapping("/deleteAllNotices")
-    public String deleteAllNotices(@RequestBody String checkBoxData) {
-        String data[] = checkBoxData.split(",");
-        String dataId = String.valueOf(data.length);
-        noticeService.deleteAllNotices(dataId);
-
-        return "redirect:/board/notice";
+    @PostMapping("/deleteNotice")
+    public ResponseEntity<String> deletePostId(@RequestBody Map<String, Object> deletePostNum) {
+        Object id = deletePostNum.get("id");
+        try {
+            if ("all".equals(id)) {
+                // 전체 삭제
+                noticeService.deleteAllNotices();
+                log.info("전체 공지사항 삭제 완료");
+            } else if (id instanceof List) {
+                // 선택 삭제
+                List<String> ids = (List<String>) id;
+                noticeService.deleteNoticesByIds(ids);
+                log.info("선택된 공지사항 삭제 완료: {}", ids);
+            } else {
+                log.warn("잘못된 요청 데이터: {}", id);
+                return ResponseEntity.badRequest().body("잘못된 요청 데이터입니다.");
+            }
+            return ResponseEntity.ok("삭제가 완료되었습니다.");
+        } catch (Exception e) {
+            log.error("삭제 중 오류 발생:", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("삭제 중 오류가 발생했습니다.");
+        }
     }
-
 
 }

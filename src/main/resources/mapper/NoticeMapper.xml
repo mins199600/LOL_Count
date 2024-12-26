@@ -49,12 +49,20 @@
         WHERE id = #{id}
     </update>
 
-    <!--공지사항 개별삭제-->
-    <delete id="deleteAllNotices" parameterType="String">
-        DELETE FROM notice
-        WHERE id = #{id}
+    <!--공지사항 전체삭제-->
+    <delete id="deleteAll">
+        DELETE
+        FROM notice
     </delete>
 
+    <!--공지사항 개별삭제-->
+    <delete id="deleteByIds" parameterType="list">
+        DELETE FROM notice
+        WHERE id IN
+        <foreach item="id" collection="ids" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
 
     <!--검색기능-->
     <select id="searchNotices" resultType="hello.lol.notice.vo.Notice">
@@ -65,7 +73,6 @@
                views,
                create_date AS createDate,
                modified_date AS modifiedDate
-
         from notice
         where 1=1
         <if test="keyword != null and keyword != ''">

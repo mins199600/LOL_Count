@@ -6,7 +6,7 @@ import java.time.LocalDate;
 
 @Data
 public class Notice {
-    private int id;
+    private String id;
     private String title;
     private String author;
     private String contents;

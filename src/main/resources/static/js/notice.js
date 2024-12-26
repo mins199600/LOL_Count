@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '/board/noticeWrite'; // 글쓰기 페이지로 이동
         };
     }
+
     // 검색 버튼 이벤트 추가
     const searchButton = document.getElementById('searchButton');
     if (searchButton) {
@@ -20,47 +21,64 @@ document.addEventListener('DOMContentLoaded', () => {
     // 공지사항 목록의 각 항목에 클릭 이벤트 추가
     const noticeItems = document.querySelectorAll('.notice-item');
     noticeItems.forEach((item) => {
-        const noticeId = item.getAttribute('data-id'); // data-id 속성 값 가져오기
-
+        const noticeId = item.getAttribute('data-id');
         // 항목 클릭 시 상세 페이지로 이동
         item.onclick = () => {
             window.location.href = `/noticeDetail?id=${noticeId}`;
         };
     });
-    //삭제 버튼 클릭 이벤트
-    var check_arr = []; //checkbox 클릭시 배열값을 담는 역활
-    const deleteAllButton = document.getElementById('deleteAllButton');
-    if (deleteAllButton) {
-        deleteAllButton.addEventListener('click', () => {
-            var ea = document.getElementsByClassName("notice-checkbox");
-            var cks = 0
-            var counts = 0;
-            while(cks < ea.length){
-                if(ea[cks].checked == true){
-                    check_arr[counts] = ea[cks].getAttribute("dataId");
-                    counts++;
-                }
-                cks++;
-            }
-            console.log(check_arr);
 
-            if (confirm('정말 모든 공지사항을 삭제하시겠습니까?')) {
-                // POST 요청 전송 (개별삭제)
-                fetch('/deleteAllNotices?checkBoxData', {
-                    method: 'POST',
-                    body:JSON.stringify(check_arr)
-                }).then((response) => {
+    // 전체 선택 체크박스 클릭 이벤트
+    const selectAllCheckbox = document.getElementById('selectAllCheckbox'); //전체 체크 박스 선택
+    const checkboxes = document.querySelectorAll('.notice-checkbox[data-id]'); // 개별 체크박스 선택
+    if (selectAllCheckbox) {
+        selectAllCheckbox.addEventListener('change', (e) => {
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = e.target.checked;
+            });
+        });
+    }
+
+    // 삭제 버튼 클릭 이벤트
+    const deleteButton = document.getElementById('deleteAllButton');
+    if (deleteButton) {
+        deleteButton.addEventListener('click', () => {
+            const isAllSelected = selectAllCheckbox && selectAllCheckbox.checked; // 전체 선택 여부 확인
+            const selectedIds = Array.from(checkboxes)
+                .filter((checkbox) => checkbox.checked)
+                .map((checkbox) => checkbox.getAttribute('data-id'));
+
+            // 요청 데이터 준비
+            let requestData;
+            if (isAllSelected) {
+                requestData = { id: "all" }; // 전체 삭제 요청
+            } else if (selectedIds.length > 0) {
+                requestData = { id: selectedIds }; // 선택 삭제 요청
+            } else {
+                alert('삭제할 항목을 선택하세요.');
+                return;
+            }
+
+            // Ajax 요청
+            fetch('/deleteNotice', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
+            })
+                .then((response) => {
                     if (response.ok) {
-                        alert('삭제되었습니다.');
+                        alert('삭제가 완료되었습니다.');
                         location.reload(); // 페이지 새로고침
                     } else {
-                        alert('전체 삭제에 실패했습니다.');
+                        alert('삭제 중 오류가 발생했습니다.');
                     }
-                }).catch((error) => {
-                    console.error('전체 삭제 요청 중 오류 발생:', error);
-                    alert('전체 삭제 요청 중 오류가 발생했습니다.');
                 })
-            }
+                .catch((error) => {
+                    console.error('삭제 요청 실패:', error);
+                    alert('삭제 요청 중 오류가 발생했습니다.');
+                });
         });
     }
 
