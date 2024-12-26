@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 
-    // 전체 선택 체크박스 클릭 이벤트
+    // 삭제
     const selectAllCheckbox = document.getElementById('selectAllCheckbox'); //전체 체크 박스 선택
     const checkboxes = document.querySelectorAll('.notice-checkbox[data-id]'); // 개별 체크박스 선택
     if (selectAllCheckbox) {

@@ -17,7 +17,7 @@
     </select>
 
     <!--단일조회-->
-    <select id="findNoticeById" parameterType="int" resultType="hello.lol.notice.vo.Notice">
+    <select id="findNoticeById" parameterType="String" resultType="hello.lol.notice.vo.Notice">
         SELECT id,
                title,
                contents,
