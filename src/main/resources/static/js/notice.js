@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 공지사항 목록의 각 항목에 클릭 이벤트 추가
+    // 단일조회(상세조회)
     const noticeItems = document.querySelectorAll('.notice-item');
     noticeItems.forEach((item) => {
         const noticeId = item.getAttribute('data-id');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 요청 데이터 준비
             let requestData;
             if (isAllSelected) {
-                requestData = { id: "all" }; // 전체 삭제 요청
+                requestData = { id: "allCheckBox" }; // 전체 삭제 요청
             } else if (selectedIds.length > 0) {
                 requestData = { id: selectedIds }; // 선택 삭제 요청
             } else {
