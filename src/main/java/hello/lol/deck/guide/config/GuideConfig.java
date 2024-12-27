@@ -10,11 +10,9 @@ import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import javax.sql.DataSource;
 
-
 @Configuration
 @RequiredArgsConstructor
-public class RecommendConfig {
-
+public class GuideConfig {
     private final DataSource dataSource;
 
     @Bean
