@@ -34,9 +34,11 @@
         </thead>
         <tbody>
         <tr th:each="notice:${notices}">
+
             <td>
                 <input type="checkbox" class="notice-checkbox" th:attr="data-id=${notice.id}">
             </td>
+
             <td th:text="${notice.id}">1</td>
             <td th:text="${notice.title}" class="notice-item" th:attr="data-id=${notice.id}">제목</td>
             <td th:text="${notice.author}" class="notice-item" th:attr="data-id=${notice.id}">작성자</td>
