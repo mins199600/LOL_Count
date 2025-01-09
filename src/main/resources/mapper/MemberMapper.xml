@@ -4,22 +4,22 @@
 
 <mapper namespace="hello.lol.member.dao.MemberDao">
 
-    <!--회원가입-->
+    <!-- 회원가입 -->
     <insert id="insertMember" parameterType="hello.lol.member.vo.MemberVo">
         INSERT INTO member (
-                member_id,
-                member_pwd
+        member_id,
+        member_pwd
         )
         VALUES (
-                #{member_id},
-                #{member_pwd}
+        #{memberId},
+        #{memberPwd}
         )
     </insert>
 
     <!-- 아이디 중복 체크 쿼리 -->
     <select id="MemberIdCheck" parameterType="string" resultType="int">
         SELECT COUNT(*)
-          FROM member
-         WHERE member_id = #{memberId}
+        FROM member
+        WHERE member_id = #{memberId}
     </select>
 </mapper>

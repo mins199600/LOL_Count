@@ -31,7 +31,7 @@ public class MemberController {
         try {
             // 서버 측 유효성 검사
             if (memberVo.getMemberId() == null || memberVo.getMemberId().trim().isEmpty()) {
-                return ResponseEntity.badRequest().body("소환사명을 입력해주세요.");
+                return ResponseEntity.badRequest().body("소환사명을 다시 입력해주세요.");
             }
             if (memberVo.getMemberPwd() == null || memberVo.getMemberPwd().length() < 8) {
                 return ResponseEntity.badRequest().body("비밀번호는 8자 이상이어야 합니다.");
