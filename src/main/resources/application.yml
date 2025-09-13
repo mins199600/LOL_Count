@@ -17,7 +17,7 @@ spring:
 
 external:
   riot:
-    api-key: RGAPI-dc3e15e3-6139-4739-b778-4f066a6207e1
+    api-key: YOUR API KEY
 
 logging:
   level:

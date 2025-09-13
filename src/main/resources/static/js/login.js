@@ -18,7 +18,7 @@
     const response = JSON.parse(xhr.responseText);
     if (response.success) {
     // 로그인 성공 시 리다이렉트
-    window.location.href = 'login/login_success';
+    window.location.href = '/login/login_success';
 } else {
     // 로그인 실패 시 에러 메시지 표시
     errorMessage.textContent = response.message || '아이디와 비밀번호를 확인해주세요.';
