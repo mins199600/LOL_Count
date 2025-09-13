@@ -1,4 +1,6 @@
 package hello.lol;
+import hello.lol.login.RoitWebClientConfig;
+import hello.lol.login.SummonerDTO;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +9,7 @@ public class LolApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LolApplication.class, args);
+
     }
 
 }
